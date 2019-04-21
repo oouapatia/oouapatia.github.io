@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="[TOC] Python�ʼ�123456789�����͵����ԣ�������Դ�뷢����ȥ�����ٵĴ����������ٶ���C�����ʺϿ�����Щ׷�������ٶȡ���ַ���Ӳ�����ܵĳ������������߱��������Ǹ���ѷ����﷨�ĳ������ת��ΪCPU�ܹ���ִ�еĻ����룬Ȼ��ִ�С������������Ͳ�ȷ�������Ա�">
+<meta name="description" content="[TOC] Python笔记123456789解释型的语言，则必须把源码发布出去代码少的代价是运行速度慢C语言适合开发那些追求运行速度、充分发挥硬件性能的程序解释器或者编译器就是负责把符合语法的程序代码转化为CPU能够与执行的机器码，然后执行。变量本身类型不确定的语言变量是`动态语言`，静态语言在定义变量时必须制定变量类型 一、介绍Python之父Guido van Rossum（荷兰）龟叔 代码">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python��������">
+<meta property="og:title" content="python基础部分">
 <meta property="og:url" content="http://yoursite.com/2019/04/21/Python笔记/python笔记1(基础)/index.html">
 <meta property="og:site_name" content="拾柒">
-<meta property="og:description" content="[TOC] Python�ʼ�123456789�����͵����ԣ�������Դ�뷢����ȥ�����ٵĴ����������ٶ���C�����ʺϿ�����Щ׷�������ٶȡ���ַ���Ӳ�����ܵĳ������������߱��������Ǹ���ѷ����﷨�ĳ������ת��ΪCPU�ܹ���ִ�еĻ����룬Ȼ��ִ�С������������Ͳ�ȷ�������Ա�">
+<meta property="og:description" content="[TOC] Python笔记123456789解释型的语言，则必须把源码发布出去代码少的代价是运行速度慢C语言适合开发那些追求运行速度、充分发挥硬件性能的程序解释器或者编译器就是负责把符合语法的程序代码转化为CPU能够与执行的机器码，然后执行。变量本身类型不确定的语言变量是`动态语言`，静态语言在定义变量时必须制定变量类型 一、介绍Python之父Guido van Rossum（荷兰）龟叔 代码">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-21T09:35:13.216Z">
+<meta property="og:updated_time" content="2019-04-21T09:39:54.172Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python��������">
-<meta name="twitter:description" content="[TOC] Python�ʼ�123456789�����͵����ԣ�������Դ�뷢����ȥ�����ٵĴ����������ٶ���C�����ʺϿ�����Щ׷�������ٶȡ���ַ���Ӳ�����ܵĳ������������߱��������Ǹ���ѷ����﷨�ĳ������ת��ΪCPU�ܹ���ִ�еĻ����룬Ȼ��ִ�С������������Ͳ�ȷ�������Ա�">
+<meta name="twitter:title" content="python基础部分">
+<meta name="twitter:description" content="[TOC] Python笔记123456789解释型的语言，则必须把源码发布出去代码少的代价是运行速度慢C语言适合开发那些追求运行速度、充分发挥硬件性能的程序解释器或者编译器就是负责把符合语法的程序代码转化为CPU能够与执行的机器码，然后执行。变量本身类型不确定的语言变量是`动态语言`，静态语言在定义变量时必须制定变量类型 一、介绍Python之父Guido van Rossum（荷兰）龟叔 代码">
 
 
 
@@ -128,7 +128,7 @@
 
 
 
-  <title>python�������� | 拾柒</title>
+  <title>python基础部分 | 拾柒</title>
   
 
 
@@ -302,7 +302,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">python��������</h1>
+          <h1 class="post-title" itemprop="name headline">python基础部分</h1>
         
 
         <div class="post-meta">
@@ -342,7 +342,7 @@
 
           
           
-             <span id="/2019/04/21/Python笔记/python笔记1(基础)/" class="leancloud_visitors" data-flag-title="python��������">
+             <span id="/2019/04/21/Python笔记/python笔记1(基础)/" class="leancloud_visitors" data-flag-title="python基础部分">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -379,242 +379,238 @@
 
       
         <p>[TOC]</p>
-<h3 id="Python�ʼ�"><a href="#Python�ʼ�" class="headerlink" title="Python�ʼ�"></a>Python�ʼ�</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">�����͵����ԣ�������Դ�뷢����ȥ</span><br><span class="line"></span><br><span class="line">�����ٵĴ����������ٶ���</span><br><span class="line"></span><br><span class="line">C�����ʺϿ�����Щ׷�������ٶȡ���ַ���Ӳ�����ܵĳ���</span><br><span class="line"></span><br><span class="line">���������߱��������Ǹ���ѷ����﷨�ĳ������ת��ΪCPU�ܹ���ִ�еĻ����룬Ȼ��ִ�С�</span><br><span class="line"></span><br><span class="line">�����������Ͳ�ȷ�������Ա�����`��̬����`����̬�����ڶ������ʱ�����ƶ���������</span><br></pre></td></tr></table></figure>
-<h3 id="һ������"><a href="#һ������" class="headerlink" title="һ������"></a>һ������</h3><p>Python֮��Guido van Rossum������������</p>
-<p>�����ٵĴ����������ٶ���</p>
-<p>C�����ʺϿ�����Щ׷�������ٶȡ���ַ���Ӳ�����ܵĳ��򣬶�Python��������дӦ�ó���ĸ߼�������ԡ�</p>
-<p>Python��Ϊ�����ṩ�˷ǳ����ƵĻ�������⣬���������硢�ļ���GUI�����ݿ⡢�ı��ȴ������ݣ�������س��������õ��”;�������õĿ��⣬Python���д����ĵ�������</p>
+<h3 id="Python笔记"><a href="#Python笔记" class="headerlink" title="Python笔记"></a>Python笔记</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">解释型的语言，则必须把源码发布出去</span><br><span class="line"></span><br><span class="line">代码少的代价是运行速度慢</span><br><span class="line"></span><br><span class="line">C语言适合开发那些追求运行速度、充分发挥硬件性能的程序</span><br><span class="line"></span><br><span class="line">解释器或者编译器就是负责把符合语法的程序代码转化为CPU能够与执行的机器码，然后执行。</span><br><span class="line"></span><br><span class="line">变量本身类型不确定的语言变量是`动态语言`，静态语言在定义变量时必须制定变量类型</span><br></pre></td></tr></table></figure>
+<h3 id="一、介绍"><a href="#一、介绍" class="headerlink" title="一、介绍"></a>一、介绍</h3><p>Python之父Guido van Rossum（荷兰）龟叔</p>
+<p>代码少的代价是运行速度慢</p>
+<p>C语言适合开发那些追求运行速度、充分发挥硬件性能的程序，而Python是用来编写应用程序的高级编程语言。</p>
+<p>Python就为我们提供了非常完善的基础代码库，覆盖了网络、文件、GUI、数据库、文本等大量内容，被形象地称作“内置电池”;除了内置的库外，Python还有大量的第三方库</p>
 <ul>
-<li>Ӧ�ã�</li>
+<li>应用：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">��ѡ������Ӧ�ã�������վ����̨����ȵȣ�</span><br><span class="line"></span><br><span class="line">����������ճ���Ҫ��С���ߣ�����ϵͳ����Ա��Ҫ�Ľű�����ȵȣ�</span><br><span class="line"></span><br><span class="line">������ǰ��������Կ����ĳ����ٰ�װ����������ʹ�á�</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">首选是网络应用，包括网站、后台服务等等；</span><br><span class="line"></span><br><span class="line">其次是许多日常需要的小工具，包括系统管理员需要的脚本任务等等；</span><br><span class="line"></span><br><span class="line">另外就是把其他语言开发的程序再包装起来，方便使用。</span><br></pre></td></tr></table></figure>
 <ul>
-<li>ȱ�㣺</li>
+<li>缺点：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">��һ��ȱ����������ٶ�����Python�ǽ��������ԣ�������ִ��ʱ��һ��һ�еط����CPU������Ļ����롣</span><br><span class="line">�ڶ���ȱ����Ǵ��벻�ܼ��ܡ������͵����ԣ�������Դ�뷢����ȥ��</span><br></pre></td></tr></table></figure>
-<p>�˳�python����ģʽ��<code>exit()</code>����<code>ctrl+z</code></p>
-<p>Python����ģʽ�Ĵ���������һ�У�ִ��һ�У���������ģʽ��ֱ������<code>.py</code>�ļ���һ����ִ�и��ļ��ڵ����д���</p>
-<h3 id="�����򵥵��������ͺͱ���"><a href="#�����򵥵��������ͺͱ���" class="headerlink" title="�����򵥵��������ͺͱ���"></a>�����򵥵��������ͺͱ���</h3><h4 id="1-�����﷨"><a href="#1-�����﷨" class="headerlink" title="1. �����﷨"></a>1. �����﷨</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1.��Python���ϸ����ִ�Сд</span><br><span class="line">2.Python�е�ÿһ�о���һ����䣬ÿ������Ի��н���</span><br><span class="line">3.Python��ÿһ����䲻Ҫ�������淶�н���ÿ�в�Ҫ����80���ַ���</span><br><span class="line">4.һ�������Էֶ��б�д�����б�дʱ�������\��β  </span><br><span class="line">5.Python�������ϸ�����ԣ�������Python�в�Ҫ���д����  </span><br><span class="line">6.��Python��ʹ��#����ʾע�ͣ�#������ݶ�����ע�ͣ�ע�͵����ݽ��ᱻ������������</span><br><span class="line">    ���ǿ���ͨ��ע�����Գ�����н���˵����һ��Ҫ�������õı�дע�͵�ϰ��</span><br><span class="line">    ע��Ҫ������ˣ�һ��ϰ����#��߻����һ���ո�</span><br></pre></td></tr></table></figure>
-<h4 id="2-��������"><a href="#2-��������" class="headerlink" title="2. ��������"></a>2. ��������</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Unicode���������Զ�ͳһ��һ�ױ�����</span><br><span class="line"></span><br><span class="line">ASCII����һ���ֽڣ�Unicode����ͨ���������ֽ�</span><br><span class="line"></span><br><span class="line">��Unicode����ת��Ϊ���ɱ䳤���롱��UTF-8���룬����Ӣ����ĸ��һ���ֽڣ�����ͨ����3���ֽڣ�ֻ�к���Ƨ���ַ��Żᱻ�����4-6���ֽڡ�</span><br><span class="line"></span><br><span class="line">ASCII������Կ���UTF-8�����һ����</span><br><span class="line"></span><br><span class="line">������ڴ��У�ͳһʹ��Unicode���룬����Ҫ���浽Ӳ�̻��ߴ����ʱ�򣬾�ת��ΪUTF-8����</span><br></pre></td></tr></table></figure>
-<p>==ASCII��ķ�Χ�ǣ�0-255��-128-+127==</p>
-<p>��Ӣ�ĵ�<code>str</code>������<code>ASCII</code>����Ϊ<code>bytes</code>�������ĵ�<code>str</code>������<code>UTF-8</code>����Ϊ<code>bytes</code></p>
-<p>==���ĵı��볬����ASCII�ı��뷶Χ�������Ǿ�ϻ�==</p>
-<h4 id="3-��������"><a href="#3-��������" class="headerlink" title="3.��������"></a>3.��������</h4><ol>
-<li><p>��ʶ���п��Ժ�����ĸ�����֡�_�����ǲ���ʹ�����ֿ�ͷ</p>
-</li>
-<li><p>��ʶ��������Python�еĹؼ��ֺͱ����֣���ʹ��Python�еĺ�������Ϊ��ʶ��</p>
-</li>
-<li><p>�����淶��</p>
-</li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">第一个缺点就是运行速度慢。Python是解释型语言，代码在执行时会一行一行地翻译成CPU能理解的机器码。</span><br><span class="line">第二个缺点就是代码不能加密。解释型的语言，则必须把源码发布出去。</span><br></pre></td></tr></table></figure>
+<p>退出python交互模式：<code>exit()</code>或者<code>ctrl+z</code></p>
+<p>Python交互模式的代码是输入一行，执行一行，而命令行模式下直接运行<code>.py</code>文件是一次性执行该文件内的所有代码</p>
+<h3 id="二、简单的数据类型和变量"><a href="#二、简单的数据类型和变量" class="headerlink" title="二、简单的数据类型和变量"></a>二、简单的数据类型和变量</h3><h4 id="1-基本语法"><a href="#1-基本语法" class="headerlink" title="1. 基本语法"></a>1. 基本语法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1.在Python中严格区分大小写</span><br><span class="line">2.Python中的每一行就是一条语句，每条语句以换行结束</span><br><span class="line">3.Python中每一行语句不要过长（规范中建议每行不要超过80个字符）</span><br><span class="line">4.一条语句可以分多行编写，多行编写时语句后边以\结尾  </span><br><span class="line">5.Python是缩进严格的语言，所以在Python中不要随便写缩进  </span><br><span class="line">6.在Python中使用#来表示注释，#后的内容都属于注释，注释的内容将会被解释器所忽略</span><br><span class="line">    我们可以通过注释来对程序进行解释说明，一定要养成良好的编写注释的习惯</span><br><span class="line">    注释要求简单明了，一般习惯上#后边会跟着一个空格</span><br></pre></td></tr></table></figure>
+<h4 id="2-编码问题"><a href="#2-编码问题" class="headerlink" title="2. 编码问题"></a>2. 编码问题</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Unicode将所有语言都统一到一套编码里</span><br><span class="line"></span><br><span class="line">ASCII码是一个字节，Unicode编码通常是两个字节</span><br><span class="line"></span><br><span class="line">把Unicode编码转化为“可变长编码”的UTF-8编码，常用英文字母是一个字节，汉字通常是3个字节，只有很生僻的字符才会被编码成4-6个字节。</span><br><span class="line"></span><br><span class="line">ASCII编码可以看成UTF-8编码的一部分</span><br><span class="line"></span><br><span class="line">计算机内存中，统一使用Unicode编码，在需要保存到硬盘或者传输的时候，就转化为UTF-8编码</span><br></pre></td></tr></table></figure>
+<p>==ASCII码的范围是：0-255或-128-+127==</p>
+<p>纯英文的<code>str</code>可以用<code>ASCII</code>编码为<code>bytes</code>，，中文的<code>str</code>可以用<code>UTF-8</code>编码为<code>bytes</code></p>
+<p>==中文的编码超过了ASCII的编码范围，好像是句废话==</p>
+<h4 id="3-变量命名"><a href="#3-变量命名" class="headerlink" title="3.变量命名"></a>3.变量命名</h4><ol>
+<li>标识符中可以含有字母、数字、_，但是不能使用数字开头</li>
+<li>标识符不能是Python中的关键字和保留字，不使用Python中的函数名作为标识符</li>
+<li>命名规范：</li>
 </ol>
 <ul>
-<li><p>��Python��ע����ѭ���������淶��</p>
+<li><p>在Python中注意遵循两种命名规范：</p>
 <ul>
-<li><p>�»���������</p>
-<p>������ĸСд������֮��ʹ��_�ָ�</p>
+<li><p>下划线命名法</p>
+<p>所有字母小写，单词之间使用_分割</p>
 </li>
-<li><p>��˹�������������շ���������  </p>
-<p>����ĸ��д��ÿ�����ʿ�ͷ��ĸ��д��������ĸСд</p>
-</li>
-</ul>
+<li><p>帕斯卡命名法（大驼峰命名法）  </p>
+<p>首字母大写，每个单词开头字母大写，其余字母小写</p>
 </li>
 </ul>
-<h4 id="4-ע��"><a href="#4-ע��" class="headerlink" title="4. ע��"></a>4. ע��</h4><ol>
-<li>��<code>#</code>�ſ�ͷ��ע�͵�һ�д���</li>
-<li>��<code>&quot;&quot;&quot;</code>����<code>&#39;&#39;&#39;</code>�������ţ�ע�͵����д���</li>
-<li>����ע��<code>#coding = utf-8</code></li>
+</li>
+</ul>
+<h4 id="4-注释"><a href="#4-注释" class="headerlink" title="4. 注释"></a>4. 注释</h4><ol>
+<li>以<code>#</code>号开头，注释掉一行代码</li>
+<li>以<code>&quot;&quot;&quot;</code>或者<code>&#39;&#39;&#39;</code>三对引号，注释掉多行代码</li>
+<li>中文注释<code>#coding = utf-8</code></li>
 </ol>
-<p>python���ִ�Сд��ʹ����������֯����飨4��������</p>
-<p>==Python�Ļ����������ͣ����֡��ַ������б����ֵ䡢Ԫ��==</p>
-<h4 id="5-���������ͺͱ���"><a href="#5-���������ͺͱ���" class="headerlink" title="5. ���������ͺͱ���"></a>5. ���������ͺͱ���</h4><h5 id="1����ֵ��"><a href="#1����ֵ��" class="headerlink" title="1����ֵ��"></a>1����ֵ��</h5><ol>
-<li><p>����</p>
-<p>Python������û�д�С����</p>
-<p>������ֵĳ��ȹ��󣬿���ʹ���»�����Ϊ�ָ���</p>
+<p>python区分大小写，使用缩进来组织代码块（4个缩进）</p>
+<p>==Python的基本数据类型：数字、字符串、列表、字典、元组==</p>
+<h4 id="5-简单数据类型和变量"><a href="#5-简单数据类型和变量" class="headerlink" title="5. 简单数据类型和变量"></a>5. 简单数据类型和变量</h4><h5 id="1、数值："><a href="#1、数值：" class="headerlink" title="1、数值："></a>1、数值：</h5><ol>
+<li><p>整数</p>
+<p>Python的整数没有大小限制</p>
+<p>如果数字的长度过大，可以使用下划线作为分隔符</p>
 </li>
-<li><p>����������e��ʾ10,�磺1.23e9��</p>
-<p>Python�����е�С������float���ͣ�û�д�С���ƣ�������һ����Χ��ֱ�ӱ�ʾΪ<code>inf</code>�����޴�</p>
+<li><p>浮点数（用e表示10,如：1.23e9）</p>
+<p>Python中所有的小数都是float类型，没有大小限制，但超出一定范围就直接表示为<code>inf</code>（无限大）</p>
 </li>
-<li><p>����</p>
+<li><p>复数</p>
 </li>
 </ol>
-<h5 id="2���ַ���-��Python-3�У�����Unicode�����"><a href="#2���ַ���-��Python-3�У�����Unicode�����" class="headerlink" title="2���ַ���(��Python 3�У�����Unicode�����)"></a>2���ַ���(��Python 3�У�����Unicode�����)</h5><ul>
-<li><p>�Ե����Ż���˫����������������</p>
+<h5 id="2、字符串-在Python-3中，是以Unicode编码的"><a href="#2、字符串-在Python-3中，是以Unicode编码的" class="headerlink" title="2、字符串(在Python 3中，是以Unicode编码的)"></a>2、字符串(在Python 3中，是以Unicode编码的)</h5><ul>
+<li><p>以单引号或者双引号括起来的内容</p>
 </li>
-<li><p><code>ord()</code>��������ȡ�ַ���������ʾ</p>
+<li><p><code>ord()</code>函数：获取字符的整数表示</p>
 </li>
-<li><p><code>chr()</code>�������ѱ���ת���ɶ�Ӧ���ַ�</p>
+<li><p><code>chr()</code>函数：把编码转换成对应的字符</p>
 </li>
-<li><p>ת���ַ�\��python�ڲ�����ʹ��<code>r&#39;&#39;</code>��ʾ<code>&#39;&#39;</code>�ڵ��ַ���Ĭ�ϲ�ת��</p>
+<li><p>转义字符\，python内部允许使用<code>r&#39;&#39;</code>表示<code>&#39;&#39;</code>内的字符串默认不转义</p>
 </li>
-<li>������<code>&#39;&#39;&#39;...&#39;&#39;&#39;</code>�ĸ�ʽ��ʾ��������</li>
-<li><p>�����ʽ���ַ���</p>
+<li><p>允许用<code>&#39;&#39;&#39;...&#39;&#39;&#39;</code>的格式表示多行内容</p>
+</li>
+<li><p>输出格式化字符串</p>
 <ul>
-<li><p>��c������ͬ����%����</p>
-<p>����<code>print(&#39;Hi,%s have %d&#39; %(&#39;you&#39;,1000))</code></p>
-<p>%s���������������ת��Ϊ�ַ���</p>
-<p><code>%%</code>��ʾһ��%</p>
+<li><p>与c语言相同，用%引导</p>
+<p>例：<code>print(&#39;Hi,%s have %d&#39; %(&#39;you&#39;,1000))</code></p>
+<p>%s会把任意数据类型转化为字符串</p>
+<p><code>%%</code>表示一个%</p>
 </li>
-<li><p><code>format()</code>����</p>
-<p>�����ô���Ĳ��������滻�ַ����ڵ�ռλ��<code>{0}</code>��<code>{1}</code>����==��Ҫ��0��ʼ==</p>
-<p>����<code>print(&#39;{0} and {1}&#39;.format(12,21))</code></p>
-</li>
-</ul>
+<li><p><code>format()</code>函数</p>
+<p>它会用传入的参数依次替换字符串内的占位符<code>{0}</code>、<code>{1}</code>……==需要从0开始==</p>
+<p>例：<code>print(&#39;{0} and {1}&#39;.format(12,21))</code></p>
 </li>
 </ul>
-<h5 id="3������ֵ��ture��false��"><a href="#3������ֵ��ture��false��" class="headerlink" title="3������ֵ��ture��false��"></a>3������ֵ��<code>ture</code>��<code>false</code>��</h5><p>����ֵ������<code>and</code> �������㣩<code>or</code>�������㣩 <code>not</code>�������㣩 ����    </p>
-<h5 id="4����ֵ"><a href="#4����ֵ" class="headerlink" title="4����ֵ"></a>4����ֵ</h5><p>��ֵ��None��ʾ</p>
-<h5 id="5������"><a href="#5������" class="headerlink" title="5������"></a>5������</h5><p>���������������֡�Ӣ�ĺ��»�<code>_</code>�ߵ���ϣ����������ֿ�ͷ</p>
-<h5 id="6������"><a href="#6������" class="headerlink" title="6������"></a>6������</h5><p>ͨ���ô�д�ı�������ʾ������ʵ�����Ǳ�����</p>
-<h5 id="7��bytes"><a href="#7��bytes" class="headerlink" title="7��bytes"></a>7��bytes</h5><p>�����Ҫ�������ϴ��䣬���߱��浽�����ϣ�����Ҫ��<code>str</code>ת��Ϊ���ֽ�Ϊ��λ��<code>bytes</code>��</p>
-<p>�����ϻ�����϶�ȡ��������������������<code>bytes</code>��</p>
-<p>==bytes��ÿ���ַ���ֻռһ���ֽڡ�==</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">��ʾ��b&apos;&apos;</span><br><span class="line">��:x = b&apos;abc&apos;</span><br></pre></td></tr></table></figure>
-<p><strong>(1) ��<code>str</code>ת��Ϊ<code>bytes</code></strong></p>
-<p>��Unicode��ʾ��<code>str</code>ͨ��<code>encode()</code>���Ա���Ϊָ����<code>bytes</code></p>
-<p>����<code>&#39;abc&#39;.encode(&#39;ascii&#39;)</code></p>
-<p><strong>(2) ��<code>bytes</code>ת��Ϊ<code>str</code></strong></p>
-<p>ͨ��<code>decode()</code>����</p>
-<p>����<code>b&#39;abc&#39;.decode(&#39;ascii&#39;)</code></p>
-<p>��<code>bytes</code>�а����޷�������ֽڣ�<code>decode()</code>�ᱨ������<code>bytes</code>��ֻ��һС������Ч�����Դ���    <code>errors=&#39;ignore&#39;</code>���Դ�����ֽ�</p>
-<p><strong>�����ַ����ĳ���</strong></p>
-<p><code>len()</code>������==<code>str</code>��������ֽ�����<code>bytes</code>��������ֽ���==</p>
-<p>����<code>len(&#39;abc&#39;)</code> <code>len(b&#39;abc&#39;)</code></p>
-<p>==�ڱ���Դ����ʱ������ΪUTF-8����==</p>
-<p>ȡԴ����ʱ��Ϊ��������UTF-8�����ȡ��ͨ�����ļ���ͷ����</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env python3  //����Linux/OS Xϵͳ������һ��Python��ִ�г���</span><br><span class="line">#-*- coding: utf-8 -*-	//����python������������UTF-8�����ȡԴ����</span><br><span class="line">����ʱҲ�豣��ΪUTF-8����</span><br></pre></td></tr></table></figure>
-<h3 id="��������"><a href="#��������" class="headerlink" title="��������"></a>��������</h3><p><strong>list��tuple�����õ����򼯺ϣ�</strong></p>
-<h4 id="1-�б���list"><a href="#1-�б���list" class="headerlink" title="1. �б���list:[]"></a>1. �б���list:<code>[]</code></h4><p><strong>�����б�����������ṹ��Ľ�ϣ�</strong></p>
-<p>���õ�һ���������ͣ�list��һ������ļ��ϣ�������ʱ���Ӻ�ɾ�����е�Ԫ��</p>
-<p>�б�������������Ϳ��Բ�ͬ��Ҳ���Ժ����б������ɶ�ά���飩</p>
-<p><strong>������</strong></p>
+</li>
+</ul>
+<h5 id="3、布尔值（ture和false）"><a href="#3、布尔值（ture和false）" class="headerlink" title="3、布尔值（ture和false）"></a>3、布尔值（<code>ture</code>和<code>false</code>）</h5><p>布尔值可以用<code>and</code> （与运算）<code>or</code>（或运算） <code>not</code>（非运算） 运算    </p>
+<h5 id="4、空值"><a href="#4、空值" class="headerlink" title="4、空值"></a>4、空值</h5><p>空值用None表示</p>
+<h5 id="5、变量"><a href="#5、变量" class="headerlink" title="5、变量"></a>5、变量</h5><p>变量名必须是数字、英文和下划<code>_</code>线的组合，不能用数字开头</p>
+<h5 id="6、常量"><a href="#6、常量" class="headerlink" title="6、常量"></a>6、常量</h5><p>通常用大写的变量名表示常量（实际仍是变量）</p>
+<h5 id="7、bytes"><a href="#7、bytes" class="headerlink" title="7、bytes"></a>7、bytes</h5><p>如果需要在网络上传输，或者保存到磁盘上，就需要把<code>str</code>转换为以字节为单位的<code>bytes</code>。</p>
+<p>在网上或磁盘上读取数字流，读到的数据是<code>bytes</code>。</p>
+<p>==bytes的每个字符都只占一个字节。==</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">表示：b&apos;&apos;</span><br><span class="line">例:x = b&apos;abc&apos;</span><br></pre></td></tr></table></figure>
+<p><strong>(1) 将<code>str</code>转化为<code>bytes</code></strong></p>
+<p>以Unicode表示的<code>str</code>通过<code>encode()</code>可以编码为指定的<code>bytes</code></p>
+<p>例：<code>&#39;abc&#39;.encode(&#39;ascii&#39;)</code></p>
+<p><strong>(2) 将<code>bytes</code>转化为<code>str</code></strong></p>
+<p>通过<code>decode()</code>方法</p>
+<p>例：<code>b&#39;abc&#39;.decode(&#39;ascii&#39;)</code></p>
+<p>若<code>bytes</code>中包含无法解码的字节，<code>decode()</code>会报错，若<code>bytes</code>中只有一小部分无效，可以传入    <code>errors=&#39;ignore&#39;</code>忽略错误的字节</p>
+<p><strong>计算字符数的长度</strong></p>
+<p><code>len()</code>函数，==<code>str</code>计算的是字节数，<code>bytes</code>计算的是字节数==</p>
+<p>例：<code>len(&#39;abc&#39;)</code> <code>len(b&#39;abc&#39;)</code></p>
+<p>==在保存源代码时，保存为UTF-8编码==</p>
+<p>取源代码时，为了让它按UTF-8编码读取，通常在文件开头加上</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env python3  //告诉Linux/OS X系统，这是一个Python可执行程序</span><br><span class="line">#-*- coding: utf-8 -*-	//告诉python解释器，按照UTF-8编码读取源代码</span><br><span class="line">保存时也需保存为UTF-8编码</span><br></pre></td></tr></table></figure>
+<h3 id="三、序列"><a href="#三、序列" class="headerlink" title="三、序列"></a>三、序列</h3><p><strong>list和tuple（内置的有序集合）</strong></p>
+<h4 id="1-列表：list"><a href="#1-列表：list" class="headerlink" title="1. 列表：list:[]"></a>1. 列表：list:<code>[]</code></h4><p><strong>有序列表（像数组与结构体的结合）</strong></p>
+<p>内置的一种数据类型，list是一种有序的集合，可以随时添加和删除其中的元素</p>
+<p>列表里面的数据类型可以不同，也可以含有列表（看成多维数组）</p>
+<p><strong>操作：</strong></p>
 <ul>
-<li><p>����</p>
-<p><code>a.append(elem)</code>�ӵ�ĩβ</p>
-<p><code>a.insert(site,elem)</code>���ӵ�ָ��λ��</p>
+<li><p>增：</p>
+<p><code>a.append(elem)</code>加到末尾</p>
+<p><code>a.insert(site,elem)</code>添加到指定位置</p>
 </li>
-<li><p>ɾ��</p>
-<p><code>a.pop(site)</code>����λ�ã�Ĭ��ĩβ</p>
+<li><p>删：</p>
+<p><code>a.pop(site)</code>不加位置，默认末尾</p>
 </li>
-<li><p>�ģ�</p>
-<p>��ֵ����Ӧ����λ��</p>
+<li><p>改：</p>
+<p>赋值给对应的索位置</p>
 </li>
-<li><p>�飺</p>
-<p>������������ͬ�Ǵ�0��ʼ</p>
-<p><code>a[site]</code>,�鿴site��Ԫ�أ�==site����Ϊ-1������ѯ���һ��Ԫ��==</p>
+<li><p>查：</p>
+<p>索引与数组相同是从0开始</p>
+<p><code>a[site]</code>,查看site处元素，==site可以为-1，即查询最后一个元素==</p>
 </li>
 </ul>
-<h4 id="2-Ԫ��-tuple"><a href="#2-Ԫ��-tuple" class="headerlink" title="2. Ԫ��: tuple:()"></a>2. Ԫ��: tuple:<code>()</code></h4><p><strong>�������б���</strong></p>
-<p>==tupleһ����ʼ���Ͳ��ܸ���==����ѯ��<code>list</code>��ͬ</p>
+<h4 id="2-元组-tuple"><a href="#2-元组-tuple" class="headerlink" title="2. 元组: tuple:()"></a>2. 元组: tuple:<code>()</code></h4><p><strong>（有序列表）</strong></p>
+<p>==tuple一旦初始化就不能更改==，查询与<code>list</code>相同</p>
 <ul>
-<li><p>ֻ��һ��Ԫ�ص�tuple</p>
-<p>==����ʱ�����һ������<code>,</code>==����������<code>a = (1,)</code></p>
-<p>��<code>a = (1)</code>�������<code>1</code>�����</p>
+<li><p>只有一个元素的tuple</p>
+<p>==定义时必须加一个逗号<code>,</code>==以消除歧义<code>a = (1,)</code></p>
+<p>若<code>a = (1)</code>定义的是<code>1</code>这个数</p>
 </li>
-<li><p>���ɱ�ġ�tuple��ʵ����list�ڱ䣩��</p>
-<p>tuple�а���list��a = tuple(‘a’,’b’,[‘A’,’B’])<code>tuple��������Ԫ�أ�</code>a��b��list</p>
+<li><p>“可变的”tuple（实际是list在变）：</p>
+<p>tuple中包含list：a = tuple(‘a’,’b’,[‘A’,’B’])<code>tuple包含三个元素，</code>a，b和list</p>
 </li>
 </ul>
-<h3 id="�g��ֵ�-dic"><a href="#�g��ֵ�-dic" class="headerlink" title="�ġ��ֵ� dic:{}"></a>�ġ��ֵ� dic:<code>{}</code></h3><h4 id="1-�ص�"><a href="#1-�ص�" class="headerlink" title="1. �ص�"></a>1. �ص�</h4><ol>
-<li>�ֵ���һ�ֿɱ�����������Դ洢�������͵�����</li>
-<li>�ֵ���ÿ�����ݶ����á�������key���������������������п������±��������</li>
-<li>�ֵ������û���Ⱥ�˳���ϵ���ֵ�Ĵ洢��==����==��</li>
-<li>�ֵ��е������Լ���key��-ֵ��value���ӽ���ӳ��洢,�����ٶȿ�</li>
-<li>�ֵ�ļ������ظ�����ֻ����==���ɱ�����==��Ϊ�ֵ�ļ���</li>
+<h3 id="四、字典-dic"><a href="#四、字典-dic" class="headerlink" title="四、字典 dic:{}"></a>四、字典 dic:<code>{}</code></h3><h4 id="1-特点"><a href="#1-特点" class="headerlink" title="1. 特点"></a>1. 特点</h4><ol>
+<li>字典是一种可变的容器，可以存储任意类型的数据</li>
+<li>字典中每个数据都是用‘键’（key）进行索引，而不像序列可以用下标进行索引</li>
+<li>字典的数据没有先后顺序关系，字典的存储是==无序==的</li>
+<li>字典中的数据以键（key）-值（value）队进行映射存储,查找速度快</li>
+<li>字典的键不能重复，且只能用==不可变类型==作为字典的键。</li>
 </ol>
-<p>��ʾ������<code>��{}����������ð�ţ������ָ��-ֵ�ԣ�����ֵ���÷ֺŷָ���</code></p>
-<p>����<code>d = {&#39;Michael&#39;: 95, &#39;Bob&#39;: 75, &#39;Tracy&#39;: 85}</code></p>
-<h4 id="2-����"><a href="#2-����" class="headerlink" title="2. ����"></a>2. ����</h4><p><strong>��1���������ֵ䣺  </strong></p>
+<p>表示方法：<code>用{}括起来，以冒号（：）分割键-值对，各键值对用分号分隔开</code></p>
+<p>例：<code>d = {&#39;Michael&#39;: 95, &#39;Bob&#39;: 75, &#39;Tracy&#39;: 85}</code></p>
+<h4 id="2-创建"><a href="#2-创建" class="headerlink" title="2. 创建"></a>2. 创建</h4><p><strong>（1）创建空字典：  </strong></p>
 <ul>
 <li><code>d = {}</code></li>
 </ul>
-<p><strong>��2�������ǿ��ֵ䣺</strong></p>
+<p><strong>（2）创建非空字典：</strong></p>
 <ul>
 <li><code>d = {&#39;name&#39;:&#39;tarena&#39;,&#39;age&#39;:&#39;15&#39;}</code></li>
 </ul>
-<p><strong>��3���ֵ�Ĺ��캯�� dict��</strong></p>
+<p><strong>（3）字典的构造函数 dict：</strong></p>
 <ul>
-<li>dict����  ����һ�����ֵ䣬��ͬ��{}</li>
-<li>dict��iterable��  �ÿɵ��������ʼ��һ���ֵ�</li>
-<li>dict��**kwargs��  �ؼ��ִ�����ʽ����һ���ֵ�</li>
+<li>dict（）  创建一个空字典，等同于{}</li>
+<li>dict（iterable）  用可迭代对象初始化一个字典</li>
+<li>dict（**kwargs）  关键字传参形式生成一个字典</li>
 </ul>
-<h4 id="3-��"><a href="#3-��" class="headerlink" title="3. ��"></a>3. ��</h4><p>�������ݷ���dict�ķ�����</p>
+<h4 id="3-增"><a href="#3-增" class="headerlink" title="3. 增"></a>3. 增</h4><p>即把数据放入dict的方法：</p>
 <ul>
-<li><p>��1�����˳�ʼ��ʱָ����</p>
+<li><p>（1）除了初始化时指定外</p>
 </li>
-<li><p>��2��ͨ��key����</p>
+<li><p>（2）通过key放入</p>
 <p><code>d[&#39;Adam&#39;] = 67</code></p>
 </li>
 </ul>
-<p>һ��keyֻ�ܶ�Ӧһ��value</p>
-<h4 id="4-ɾ"><a href="#4-ɾ" class="headerlink" title="4. ɾ"></a>4. ɾ</h4><p><strong>ɾ��һ��key��</strong></p>
+<p>一个key只能对应一个value</p>
+<h4 id="4-删"><a href="#4-删" class="headerlink" title="4. 删"></a>4. 删</h4><p><strong>删除一个key：</strong></p>
 <ul>
-<li>��<code>pop(key)</code>��������Ӧ��valueҲ���dict��ɾ��</li>
+<li>用<code>pop(key)</code>方法，对应的value也会从dict中删除</li>
 </ul>
-<h4 id="5-Ҫ����key�����ڵJ���"><a href="#5-Ҫ����key�����ڵJ���" class="headerlink" title="5. Ҫ����key�����ڵĴ���:"></a>5. Ҫ����key�����ڵĴ���:</h4><ul>
-<li><p>(1)ͨ��<code>in/not in</code>�ж�key�Ƿ���ڣ�</p>
-<p><code>&#39;Thomas&#39; in d</code>     #������ڷ���True�����򷵻�False��not in ��in����ֵ�෴</p>
+<h4 id="5-要避免key不存在的错误"><a href="#5-要避免key不存在的错误" class="headerlink" title="5. 要避免key不存在的错误:"></a>5. 要避免key不存在的错误:</h4><ul>
+<li><p>(1)通过<code>in/not in</code>判断key是否存在：</p>
+<p><code>&#39;Thomas&#39; in d</code>     #如果存在返回True，否则返回False；not in 与in返回值相反</p>
 </li>
-<li><p>(2)ͨ��dict�ṩ��<code>get()</code>���������key�����ڣ����Է���<code>None</code>�������Լ�ָ����value��</p>
+<li><p>(2)通过dict提供的<code>get()</code>方法，如果key不存在，可以返回<code>None</code>，或者自己指定的value：</p>
 <p><code>d.get(&#39;Thomas&#39;, -1)</code></p>
 </li>
 </ul>
-<p>==dict��key������<strong>���ɱ����</strong>==</p>
-<p>ͨ��key����λ�õ��㷨��Ϊ��ϣ�㷨��Hash��</p>
-<h3 id="�塢����set"><a href="#�塢����set" class="headerlink" title="�塢����set"></a>�塢����set</h3><h4 id="1-�ص�-1"><a href="#1-�ص�-1" class="headerlink" title="1. �ص�"></a>1. �ص�</h4><ol>
-<li>�����ǿɱ������</li>
-<li>�����ڵ����ݶ�����Ψһ�ģ���û���ظ���key��==�ظ�Ԫ����set���Զ�������==</li>
-<li>����������Ĵ洢�ṹ�������е�����û���Ⱥ��ϵ</li>
-<li>set��ԭ����dictһ���������ڵ�Ԫ�ر�����==���ɱ����==</li>
-<li>�����ǿɵ�����</li>
-<li>�������൱��ֻ�м�û��ֵ���ֵ䣨��һ��key�ļ��ϣ������洢value��</li>
+<p>==dict的key必须是<strong>不可变对象</strong>==</p>
+<p>通过key计算位置的算法称为哈希算法（Hash）</p>
+<h3 id="五、集合set"><a href="#五、集合set" class="headerlink" title="五、集合set"></a>五、集合set</h3><h4 id="1-特点-1"><a href="#1-特点-1" class="headerlink" title="1. 特点"></a>1. 特点</h4><ol>
+<li>集合是可变的容器</li>
+<li>集合内的数据对象是唯一的，即没有重复的key，==重复元素在set中自动被过滤==</li>
+<li>集合是无序的存储结构，集合中的数据没有先后关系</li>
+<li>set的原理和dict一样，集合内的元素必须是==不可变对象==</li>
+<li>集合是可迭代的</li>
+<li>集合是相当于只有键没有值的字典（是一组key的集合，但不存储value）</li>
 </ol>
-<p>==���ڲ��������˵�����ö������������ⷽ����Ҳ����ı�ö���������������Щ�����ᴴ���µĶ��󲢷���==</p>
-<h4 id="2-����-1"><a href="#2-����-1" class="headerlink" title="2. ����"></a>2. ����</h4><p>Ҫ����һ��set����Ҫ�ṩһ��list��Ϊ���뼯��</p>
-<p>  <strong>��1�������յļ��ϣ�</strong><br>      <code>set����   #set��������һ���յļ���</code></p>
-<p><strong>��2�������ǿռ��ϣ�</strong><br>      <code>s = {1,2,3}  #�����е���������1,2,3</code><br><strong>��3�����ϵĹ��캯�� set��</strong></p>
+<p>==对于不变对象来说，调用对象自身的任意方法，也不会改变该对象自身的内容这些方法会创建新的对象并返回==</p>
+<h4 id="2-创建-1"><a href="#2-创建-1" class="headerlink" title="2. 创建"></a>2. 创建</h4><p>要创建一个set，需要提供一个list作为输入集合</p>
+<p>  <strong>（1）创建空的集合：</strong><br>      <code>set（）   #set（）创建一个空的集合</code></p>
+<p><strong>（2）创建非空集合：</strong><br>      <code>s = {1,2,3}  #集合中的三个整数1,2,3</code><br><strong>（3）集合的构造函数 set：</strong></p>
 <ul>
-<li>set���������ռ���</li>
-<li>set��iterable��  �ÿɵ������󴴽�һ���µļ��϶���  </li>
+<li>set（）创建空集合</li>
+<li>set（iterable）  用可迭代对象创建一个新的集合对象  </li>
 </ul>
-<h4 id="3-��-1"><a href="#3-��-1" class="headerlink" title="3. ��"></a>3. ��</h4><ul>
-<li>ͨ��<code>add(key)</code>����</li>
+<h4 id="3-增-1"><a href="#3-增-1" class="headerlink" title="3. 增"></a>3. 增</h4><ul>
+<li>通过<code>add(key)</code>方法</li>
 <li><code>s.add(4)</code></li>
 </ul>
-<h4 id="4-ɾ-1"><a href="#4-ɾ-1" class="headerlink" title="4. ɾ"></a>4. ɾ</h4><ul>
-<li><p>ͨ��<code>remove(key)</code>����</p>
+<h4 id="4-删-1"><a href="#4-删-1" class="headerlink" title="4. 删"></a>4. 删</h4><ul>
+<li>通过<code>remove(key)</code>方法</li>
+<li><code>s.remove(4)</code></li>
+</ul>
+<h4 id="5-数学意义上的交集、并集等操作"><a href="#5-数学意义上的交集、并集等操作" class="headerlink" title="5. 数学意义上的交集、并集等操作"></a>5. 数学意义上的交集、并集等操作</h4><ul>
+<li>交集：<code>s1 &amp; s2</code></li>
+<li>并集：<code>s1 | s2</code></li>
+</ul>
+<h3 id="五、判断"><a href="#五、判断" class="headerlink" title="五、判断"></a>五、判断</h3><h4 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h4><ul>
+<li><p>python的if没有括号，==依靠缩进==</p>
 </li>
-<li><p><code>s.remove(4)</code></p>
+<li><p><code>if</code>与<code>else</code>后有冒号<code>:</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if age &gt;= 18:</span><br><span class="line"></span><br><span class="line">else：</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>elif</code>：（else if）</p>
 </li>
 </ul>
-<h4 id="5-��ѧ�����ϵL����������Y���"><a href="#5-��ѧ�����ϵL����������Y���" class="headerlink" title="5. ��ѧ�����ϵĽ����������Ȳ���"></a>5. ��ѧ�����ϵĽ����������Ȳ���</h4><ul>
-<li>������<code>s1 &amp; s2</code></li>
-<li>������<code>s1 | s2</code></li>
-</ul>
-<h3 id="�塢�ж�"><a href="#�塢�ж�" class="headerlink" title="�塢�ж�"></a>�塢�ж�</h3><h4 id="if���"><a href="#if���" class="headerlink" title="if���"></a>if���</h4><ul>
-<li><p>python��ifû�����ţ�==��������==</p>
-</li>
-<li><p><code>if</code>��<code>else</code>����ð��<code>:</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if age &gt;= 18:</span><br><span class="line"></span><br><span class="line">else��</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>elif</code>����else if��</p>
-</li>
-</ul>
-<h3 id="����ѭ��"><a href="#����ѭ��" class="headerlink" title="����ѭ��"></a>����ѭ��</h3><ol>
-<li>for…inѭ��</li>
+<h3 id="六、循环"><a href="#六、循环" class="headerlink" title="六、循环"></a>六、循环</h3><ol>
+<li>for…in循环</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for x in ...:  #��ÿ��Ԫ�ش������x��Ȼ��ִ���������</span><br><span class="line">	print(x)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for x in ...:  #把每个元素带入变量x，然后执行缩进语句</span><br><span class="line">	print(x)</span><br></pre></td></tr></table></figure>
 <p><code>[x * x for x in range(1, 11)]</code></p>
-<p>forѭ���������if�жϣ�<code>[x * x for x in range(1, 11) if x % 2 == 0]</code></p>
-<p>����ѭ����<code>[m + n for m in &#39;ABC&#39; for n in &#39;XYZ&#39;]</code></p>
-<p><code>for</code>ѭ����ʵ����ͬʱʹ�����������������������<code>dict</code>��<code>items()</code>����ͬʱ����key��value</p>
+<p>for循环后面加上if判断：<code>[x * x for x in range(1, 11) if x % 2 == 0]</code></p>
+<p>两层循环：<code>[m + n for m in &#39;ABC&#39; for n in &#39;XYZ&#39;]</code></p>
+<p><code>for</code>循环其实可以同时使用两个甚至多个变量，比如<code>dict</code>的<code>items()</code>可以同时迭代key和value</p>
 <p><code>for k, v in d.items():
      print(k, &#39;=&#39;, v)</code></p>
-<h4 id="2-whileѭ��"><a href="#2-whileѭ��" class="headerlink" title="2. whileѭ��"></a>2. whileѭ��</h4><p>��C����ͬ</p>
-<h4 id="3-�˳�ѭ��"><a href="#3-�˳�ѭ��" class="headerlink" title="3. �˳�ѭ��"></a>3. �˳�ѭ��</h4><ul>
-<li>break���˳�ѭ��</li>
-<li>continue���˳���ǰѭ��</li>
+<h4 id="2-while循环"><a href="#2-while循环" class="headerlink" title="2. while循环"></a>2. while循环</h4><p>与C语言同</p>
+<h4 id="3-退出循环"><a href="#3-退出循环" class="headerlink" title="3. 退出循环"></a>3. 退出循环</h4><ul>
+<li>break：退出循环</li>
+<li>continue：退出当前循环</li>
 </ul>
-<h3 id="�ߡ�����"><a href="#�ߡ�����" class="headerlink" title="�ߡ�����"></a>�ߡ�����</h3><h4 id="1-����"><a href="#1-����" class="headerlink" title="1. ����"></a>1. ����</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">10/3	#��������Ǹ�����</span><br><span class="line">10//3	#�������������</span><br><span class="line">10%3	#ȡ�����㣬���������</span><br></pre></td></tr></table></figure>
+<h3 id="七、运算"><a href="#七、运算" class="headerlink" title="七、运算"></a>七、运算</h3><h4 id="1-除法"><a href="#1-除法" class="headerlink" title="1. 除法"></a>1. 除法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">10/3	#除法结果是浮点数</span><br><span class="line">10//3	#除法结果是整数</span><br><span class="line">10%3	#取余运算，结果是整数</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -863,7 +859,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python�ʼ�"><span class="nav-number">1.</span> <span class="nav-text">Python�ʼ�</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#һ������"><span class="nav-number">2.</span> <span class="nav-text">һ������</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#�����򵥵��������ͺͱ���"><span class="nav-number">3.</span> <span class="nav-text">�����򵥵��������ͺͱ���</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-�����﷨"><span class="nav-number">3.1.</span> <span class="nav-text">1. �����﷨</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-��������"><span class="nav-number">3.2.</span> <span class="nav-text">2. ��������</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-��������"><span class="nav-number">3.3.</span> <span class="nav-text">3.��������</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-ע��"><span class="nav-number">3.4.</span> <span class="nav-text">4. ע��</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-���������ͺͱ���"><span class="nav-number">3.5.</span> <span class="nav-text">5. ���������ͺͱ���</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1����ֵ��"><span class="nav-number">3.5.1.</span> <span class="nav-text">1����ֵ��</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2���ַ���-��Python-3�У�����Unicode�����"><span class="nav-number">3.5.2.</span> <span class="nav-text">2���ַ���(��Python 3�У�����Unicode�����)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3������ֵ��ture��false��"><span class="nav-number">3.5.3.</span> <span class="nav-text">3������ֵ��ture��false��</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4����ֵ"><span class="nav-number">3.5.4.</span> <span class="nav-text">4����ֵ</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5������"><span class="nav-number">3.5.5.</span> <span class="nav-text">5������</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6������"><span class="nav-number">3.5.6.</span> <span class="nav-text">6������</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7��bytes"><span class="nav-number">3.5.7.</span> <span class="nav-text">7��bytes</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#��������"><span class="nav-number">4.</span> <span class="nav-text">��������</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-�б���list"><span class="nav-number">4.1.</span> <span class="nav-text">1. �б���list:[]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Ԫ��-tuple"><span class="nav-number">4.2.</span> <span class="nav-text">2. Ԫ��: tuple:()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#�g��ֵ�-dic"><span class="nav-number">5.</span> <span class="nav-text">�ġ��ֵ� dic:{}</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-�ص�"><span class="nav-number">5.1.</span> <span class="nav-text">1. �ص�</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-����"><span class="nav-number">5.2.</span> <span class="nav-text">2. ����</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-��"><span class="nav-number">5.3.</span> <span class="nav-text">3. ��</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-ɾ"><span class="nav-number">5.4.</span> <span class="nav-text">4. ɾ</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-Ҫ����key�����ڵJ���"><span class="nav-number">5.5.</span> <span class="nav-text">5. Ҫ����key�����ڵĴ���:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#�塢����set"><span class="nav-number">6.</span> <span class="nav-text">�塢����set</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-�ص�-1"><span class="nav-number">6.1.</span> <span class="nav-text">1. �ص�</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-����-1"><span class="nav-number">6.2.</span> <span class="nav-text">2. ����</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-��-1"><span class="nav-number">6.3.</span> <span class="nav-text">3. ��</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-ɾ-1"><span class="nav-number">6.4.</span> <span class="nav-text">4. ɾ</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-��ѧ�����ϵL����������Y���"><span class="nav-number">6.5.</span> <span class="nav-text">5. ��ѧ�����ϵĽ����������Ȳ���</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#�塢�ж�"><span class="nav-number">7.</span> <span class="nav-text">�塢�ж�</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#if���"><span class="nav-number">7.1.</span> <span class="nav-text">if���</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#����ѭ��"><span class="nav-number">8.</span> <span class="nav-text">����ѭ��</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-whileѭ��"><span class="nav-number">8.1.</span> <span class="nav-text">2. whileѭ��</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-�˳�ѭ��"><span class="nav-number">8.2.</span> <span class="nav-text">3. �˳�ѭ��</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#�ߡ�����"><span class="nav-number">9.</span> <span class="nav-text">�ߡ�����</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-����"><span class="nav-number">9.1.</span> <span class="nav-text">1. ����</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python笔记"><span class="nav-number">1.</span> <span class="nav-text">Python笔记</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一、介绍"><span class="nav-number">2.</span> <span class="nav-text">一、介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、简单的数据类型和变量"><span class="nav-number">3.</span> <span class="nav-text">二、简单的数据类型和变量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-基本语法"><span class="nav-number">3.1.</span> <span class="nav-text">1. 基本语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-编码问题"><span class="nav-number">3.2.</span> <span class="nav-text">2. 编码问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-变量命名"><span class="nav-number">3.3.</span> <span class="nav-text">3.变量命名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-注释"><span class="nav-number">3.4.</span> <span class="nav-text">4. 注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-简单数据类型和变量"><span class="nav-number">3.5.</span> <span class="nav-text">5. 简单数据类型和变量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1、数值："><span class="nav-number">3.5.1.</span> <span class="nav-text">1、数值：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2、字符串-在Python-3中，是以Unicode编码的"><span class="nav-number">3.5.2.</span> <span class="nav-text">2、字符串(在Python 3中，是以Unicode编码的)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3、布尔值（ture和false）"><span class="nav-number">3.5.3.</span> <span class="nav-text">3、布尔值（ture和false）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4、空值"><span class="nav-number">3.5.4.</span> <span class="nav-text">4、空值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5、变量"><span class="nav-number">3.5.5.</span> <span class="nav-text">5、变量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6、常量"><span class="nav-number">3.5.6.</span> <span class="nav-text">6、常量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7、bytes"><span class="nav-number">3.5.7.</span> <span class="nav-text">7、bytes</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、序列"><span class="nav-number">4.</span> <span class="nav-text">三、序列</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-列表：list"><span class="nav-number">4.1.</span> <span class="nav-text">1. 列表：list:[]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-元组-tuple"><span class="nav-number">4.2.</span> <span class="nav-text">2. 元组: tuple:()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、字典-dic"><span class="nav-number">5.</span> <span class="nav-text">四、字典 dic:{}</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-特点"><span class="nav-number">5.1.</span> <span class="nav-text">1. 特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-创建"><span class="nav-number">5.2.</span> <span class="nav-text">2. 创建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-增"><span class="nav-number">5.3.</span> <span class="nav-text">3. 增</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-删"><span class="nav-number">5.4.</span> <span class="nav-text">4. 删</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-要避免key不存在的错误"><span class="nav-number">5.5.</span> <span class="nav-text">5. 要避免key不存在的错误:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、集合set"><span class="nav-number">6.</span> <span class="nav-text">五、集合set</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-特点-1"><span class="nav-number">6.1.</span> <span class="nav-text">1. 特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-创建-1"><span class="nav-number">6.2.</span> <span class="nav-text">2. 创建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-增-1"><span class="nav-number">6.3.</span> <span class="nav-text">3. 增</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-删-1"><span class="nav-number">6.4.</span> <span class="nav-text">4. 删</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-数学意义上的交集、并集等操作"><span class="nav-number">6.5.</span> <span class="nav-text">5. 数学意义上的交集、并集等操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、判断"><span class="nav-number">7.</span> <span class="nav-text">五、判断</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#if语句"><span class="nav-number">7.1.</span> <span class="nav-text">if语句</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、循环"><span class="nav-number">8.</span> <span class="nav-text">六、循环</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-while循环"><span class="nav-number">8.1.</span> <span class="nav-text">2. while循环</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-退出循环"><span class="nav-number">8.2.</span> <span class="nav-text">3. 退出循环</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#七、运算"><span class="nav-number">9.</span> <span class="nav-text">七、运算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-除法"><span class="nav-number">9.1.</span> <span class="nav-text">1. 除法</span></a></li></ol></li></ol></div>
             
 
           </div>
