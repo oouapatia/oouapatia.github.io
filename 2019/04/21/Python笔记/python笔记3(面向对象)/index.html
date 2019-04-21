@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="python,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="拾柒" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="[TOC] 一、面向对象编程 面向过程的程序设计把计算机程序视为一系列的命令集合，即一组函数的顺序执行。把大块函数通过切割成小函数来降低系统的复杂度 面向对象的程序设计把计算机程序视为一组对象的集合，计算机执行的就是一系列消息在各个对象之间传递 面向对象的数据思想是抽象出Class，根据Class创建Instance（实例） 一个Class既包含数据，又包含操作数据的方法 1、类和实例 定义类：">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python面向对象">
+<meta property="og:url" content="http://yoursite.com/2019/04/21/Python笔记/python笔记3(面向对象)/index.html">
+<meta property="og:site_name" content="拾柒">
+<meta property="og:description" content="[TOC] 一、面向对象编程 面向过程的程序设计把计算机程序视为一系列的命令集合，即一组函数的顺序执行。把大块函数通过切割成小函数来降低系统的复杂度 面向对象的程序设计把计算机程序视为一组对象的集合，计算机执行的就是一系列消息在各个对象之间传递 面向对象的数据思想是抽象出Class，根据Class创建Instance（实例） 一个Class既包含数据，又包含操作数据的方法 1、类和实例 定义类：">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-21T09:30:56.179Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python面向对象">
+<meta name="twitter:description" content="[TOC] 一、面向对象编程 面向过程的程序设计把计算机程序视为一系列的命令集合，即一组函数的顺序执行。把大块函数通过切割成小函数来降低系统的复杂度 面向对象的程序设计把计算机程序视为一组对象的集合，计算机执行的就是一系列消息在各个对象之间传递 面向对象的数据思想是抽象出Class，根据Class创建Instance（实例） 一个Class既包含数据，又包含操作数据的方法 1、类和实例 定义类：">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/04/21/Python笔记/python笔记3(面向对象)/">
+
+
+
+
+
+  <title>python面向对象 | 拾柒</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">拾柒</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">好好学习，天天向上</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/21/Python笔记/python笔记3(面向对象)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="拾柒">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="拾柒">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">python面向对象</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-21T17:31:12+08:00">
+                2019-04-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/21/Python笔记/python笔记3(面向对象)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/21/Python笔记/python笔记3(面向对象)/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/04/21/Python笔记/python笔记3(面向对象)/" class="leancloud_visitors" data-flag-title="python面向对象">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>[TOC]</p>
+<h3 id="一、面向对象编程"><a href="#一、面向对象编程" class="headerlink" title="一、面向对象编程"></a>一、面向对象编程</h3><hr>
+<p>面向过程的程序设计把计算机程序视为一系列的命令集合，即一组函数的顺序执行。把大块函数通过切割成小函数来降低系统的复杂度</p>
+<p>面向对象的程序设计把计算机程序视为一组对象的集合，计算机执行的就是一系列消息在各个对象之间传递</p>
+<p>面向对象的数据思想是抽象出Class，根据Class创建Instance（实例）</p>
+<p>一个Class既包含数据，又包含操作数据的方法</p>
+<h4 id="1、类和实例"><a href="#1、类和实例" class="headerlink" title="1、类和实例"></a>1、类和实例</h4><ol>
+<li><p><strong>定义类：</strong></p>
+<p><code>class Student(object):</code></p>
+<p><code>(object)</code>表示该类从哪个类继承，如果没有合适的继承类，就使用<code>object</code>类(所有类都会继承的类)</p>
+</li>
+<li><p><strong>创建实例：</strong></p>
+<p><code>类名+()</code>实现:<code>bart = Studen()</code></p>
+<p>通过一个特殊的<code>__init__</code>方法，在创建实例的时候就把一些必须的属性加上去</p>
+<p><code>def __init__(self,name,score):</code> </p>
+<p><code>__init__</code>的第一个参数必须是self，表示创建实例的本身，传入参数<code>self</code>时不需要传</p>
+</li>
+<li><p><strong>数据封装</strong></p>
+<p>在类的内部定义访问数据的函数</p>
+</li>
+</ol>
+<p>==方法就是与实例绑定的函数，方法可以直接访问数据的实例==</p>
+<h4 id="2、访问限制"><a href="#2、访问限制" class="headerlink" title="2、访问限制"></a>2、访问限制</h4><ul>
+<li><p>设为私有来限制访问</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class Student(object):</span><br><span class="line">	def __init__(self):</span><br><span class="line">		self.__name =name</span><br><span class="line">		self.__age = age</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>_name</code>外部可以直接访问，但按约定，不直接进行访问</p>
+</li>
+<li><p><code>__name</code>不能被访问的原因是python解释器对外把<code>__name</code>变量改为了<code>_Student__name</code>（不同版本的python改成不同的变量名）</p>
+</li>
+</ul>
+<p>==Python本身没有任何机制不阻止你干坏事，一切靠自觉==</p>
+<h4 id="3、继承和多态"><a href="#3、继承和多态" class="headerlink" title="3、继承和多态"></a>3、继承和多态</h4><p><code>class Dog(Animal):</code></p>
+<p>子类获得父类的全部功能</p>
+<p>当子类与父类同时存在相同的方法，子类会覆盖父类的方法</p>
+<p>开闭原则：</p>
+<ul>
+<li>对扩展开发：允许增加新的子类</li>
+<li>对修改封闭</li>
+</ul>
+<h4 id="4、获取对象信息"><a href="#4、获取对象信息" class="headerlink" title="4、获取对象信息"></a>4、获取对象信息</h4><p><strong>（1）<code>type()</code>：查看对象类型，==返回==对应的==class类型==</strong></p>
+<ul>
+<li><p>基本类型都可以用<code>type()</code>判断</p>
+<p>例：<code>type(123)</code>、<code>type(&#39;str&#39;)</code></p>
+<ul>
+<li><p>判断基本数据类型可以直接写<code>int</code>、<code>char</code></p>
+<p><code></code>type(123) == int`</p>
+</li>
+</ul>
+</li>
+<li><p>一个变量指向函数或者类，也可以用<code>type()</code>判断</p>
+<p>例：<code>type(abs)</code>、<code>type(a)</code></p>
+<ul>
+<li><p>判断一个对象是否是函数（可以使用type模块中定义的常量）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import types</span><br><span class="line">def fn():</span><br><span class="line">	pass</span><br><span class="line">print(type(fn) == types.FunctionsType)</span><br><span class="line">print(type(abs) == types.BuiltFunctionType)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>（2）<code>isinstance()</code>：判断一个对象是否是==该类型本身==或者位于该类型的==父继承链上==</strong></p>
+<ul>
+<li><p>判断继承</p>
+<p>如果继承关系为：</p>
+<p><code>object-&gt;Animal-&gt;Dog</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = Animal()</span><br><span class="line">d = Dog()</span><br><span class="line">isinstance(d,Dog)</span><br><span class="line">isinstance(d,Animal)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>与<code>type()</code>一样判断基本类型</p>
+<p><code>isinstance(&#39;a&#39;,str)</code></p>
+</li>
+<li><p>判断一个变量是否是某些类型中的一种</p>
+<p><code>isinstance([1,2,3],(list,tuple))</code></p>
+</li>
+</ul>
+<p>==优先使用instance==</p>
+<p><strong>（3）<code>dir()</code>：获取对象的所有属性和方法，==返回==一个包含字符串的==list==</strong></p>
+<ul>
+<li><p>直接操作对象的状态，获得对象的方法</p>
+<ul>
+<li><p>获取属性：<code>getattr()</code>：<code>getattr(obj,&#39;x&#39;)</code></p>
+<p>可以传入default参数，如果参数不存在，返回默认值</p>
+<p><code>getattr(obi,&#39;x&#39;,404)</code> #不存在返回404</p>
+</li>
+<li><p>设置属性：<code>setattr()</code>：<code>setattr(obj,&#39;y&#39;,19)</code></p>
+</li>
+<li><p>查看属性：<code>hasattr()</code>：<code>hasattr(obj,&#39;y&#39;)</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="二、实例属性和类属性"><a href="#二、实例属性和类属性" class="headerlink" title="二、实例属性和类属性"></a>二、实例属性和类属性</h3><hr>
+<ul>
+<li><p><strong>实例属性：</strong></p>
+<p>实例属性属于各个实例所有，互不干扰</p>
+</li>
+<li><p><strong>类属性：</strong></p>
+<p>类本身绑定属性，在class中直接定义属性，类属性属于类所有，所有实例共享一个属性</p>
+</li>
+</ul>
+<p>==不要对实例属性和类属性使用相同的名字，实例属性会将类属性屏蔽掉==</p>
+<h3 id="三、面向对象高级编程"><a href="#三、面向对象高级编程" class="headerlink" title="三、面向对象高级编程"></a>三、面向对象高级编程</h3><hr>
+<h4 id="1、使用-slots-方法"><a href="#1、使用-slots-方法" class="headerlink" title="1、使用__slots__方法"></a>1、使用<code>__slots__</code>方法</h4><ul>
+<li><p>给实例绑定方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def set_age(self,age): #定义一个函数作为实例方法</span><br><span class="line">	self.age = age</span><br><span class="line">from types import Methodtype</span><br><span class="line">s.set_age = MethodType(set_age,s) #给实例绑定一个方法</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>给class绑定方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def set_score(self,score):</span><br><span class="line">	self.score = score</span><br><span class="line">Student.set_score = set_score</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong><code>__slots__</code>：</strong>限制该实例的能添加的==属性==</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">class Student(object):</span><br><span class="line">	__slots__ = (&apos;name&apos;,&apos;age&apos;) #用tuple定义允许绑定的属性名称</span><br></pre></td></tr></table></figure>
+<p><code>__slots__</code>定义的属性仅==对当前类的实例起作用，对继承的子类不起作用==</p>
+<p>想在子类中运用，就需在子类中也定义<code>__slots__</code>，子类允许定义的属性就是自身的<code>__slots__</code>加上父类的<code>__slots__</code></p>
+</li>
+</ul>
+<h4 id="2、使用-property"><a href="#2、使用-property" class="headerlink" title="2、使用@property"></a>2、使用<code>@property</code></h4><ul>
+<li><p>定义读写属性：定义<code>getter</code>和<code>setter</code>方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Student(object):</span><br><span class="line">	</span><br><span class="line">	@property		#getter方法</span><br><span class="line">	def birth(self):</span><br><span class="line">		return self._birth</span><br><span class="line">	</span><br><span class="line">	@birth.setter    #setter方法</span><br><span class="line">	def birth(self,value):</span><br><span class="line">		self._birth = value</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>定义只读属性：只定义<code>setter</code>方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Student(object):</span><br><span class="line">	</span><br><span class="line">	@property</span><br><span class="line">	def age(self):</span><br><span class="line">		return 2015-self._birth</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="3、多重继承"><a href="#3、多重继承" class="headerlink" title="3、多重继承"></a>3、多重继承</h4><ul>
+<li><p><strong><code>MixIn</code></strong></p>
+<p>多重继承：一个子类同时继承多个父类（<code>class Bat(Mammal,Flyable)</code>）</p>
+<p><code>MixIn</code>:（mix+in：混入）给一个类增加多个功能（继承多个父类）</p>
+<p>优先通过多重继承来组合多个<code>Mixln</code>的功能</p>
+</li>
+</ul>
+<h4 id="4、定制类"><a href="#4、定制类" class="headerlink" title="4、定制类"></a>4、定制类</h4><ul>
+<li><p><strong><code>__str__</code>：返回字符串</strong></p>
+<p>定义<code>__str__</code>方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">def __str__(self):</span><br><span class="line">	return &apos;Student object (name:%s)&apos; % self.name</span><br></pre></td></tr></table></figure>
+<p> 直接显示变量调用的不是<code>__str__()</code>,而是<code>__repr__()</code></p>
+<ul>
+<li><code>__str__()</code>返回用户看到的字符串<code>Student object (name:micle)</code></li>
+<li><code>__repr__()</code>返回开发者看到的字符串<code>&lt;__main__.Student object at 0x109afb310&gt;</code></li>
+<li>解决办法：<code>__repr__ = __str__</code></li>
+</ul>
+</li>
+<li><p><strong><code>__iter__</code>：循环类</strong></p>
+<p>==iter：循环==</p>
+<p>类想被<code>for...in</code>循环，就必须实现一个<code>__iter__()</code>方法，改方法返回一个迭代对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Fib(object):</span><br><span class="line">	def __init__(self):</span><br><span class="line">		self.a,self.b = 0,1</span><br><span class="line">	def __iter__(self):</span><br><span class="line">		return self   #实例本身是迭代对象，故返回自己</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong><code>__getitem__</code>：类按下标访问元素</strong></p>
+<p>==item：==</p>
+<p>按照下标取出元素：<code>__getitem__()</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class Fib(object):</span><br><span class="line">	def __getitem__(self,n):</span><br><span class="line">		a,b=1,1</span><br><span class="line">		for x in range(n):</span><br><span class="line">			a,b = b,a+b</span><br><span class="line">		return a</span><br></pre></td></tr></table></figure>
+<p>对Fib切片会报错，原因是<code>__getitem__()</code>传入的可能是一个int，也可能是一个切片对象slice</p>
+<p>所以需要对传入的参数做判断<code>if isinstance(n,slice)</code></p>
+</li>
+<li><p><strong><code>__getattr__</code>：避免调用类的方法或属性不存在报错</strong></p>
+<p>==attr：属性==</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def __getattr__(self,attr)</span><br><span class="line">	if attr == &apos;age&apos;:</span><br><span class="line">		return 99   		#返回score的值</span><br><span class="line">		#return lambda: 25	#也可以返回函数</span><br></pre></td></tr></table></figure>
+<p>只有在没有找到属性的情况下，才调用<code>__getattr__</code></p>
+<p><code>__getattr__()</code>默认返回时<code>None</code></p>
+<p>要让class只响应特定的几个属性，就需要抛出<code>AttributeError</code>（把一个类的所有属性和方法调用全部动态化处理了）</p>
+</li>
+<li><p><strong><code>__call__</code>：对实例进行调用</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class Student(object):</span><br><span class="line">	def __init__(self,name):</span><br><span class="line">		self.name = name</span><br><span class="line">		</span><br><span class="line">	def __call__(self):</span><br><span class="line">		print(&apos;.....&apos;)</span><br></pre></td></tr></table></figure>
+<p><code>__call__()</code> 还可以定义参数：<code>def __call__(self,age)</code></p>
+<p><strong>判断一个对象能否被调用：</strong></p>
+<p>能被调用的对象就是一个<code>Callable</code>对象:<code>callable(Student())</code></p>
+<p><a href="http://docs.python.org/3/reference/datamodel.html#special-method-names" target="_blank" rel="noopener">Python的官方文档</a></p>
+</li>
+</ul>
+<h4 id="5、使用枚举类Enum"><a href="#5、使用枚举类Enum" class="headerlink" title="5、使用枚举类Enum()"></a>5、使用枚举类<code>Enum()</code></h4><ul>
+<li><p>使用<code>Enum()</code></p>
+<p><code>from enum import Enum</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for name,member in Month__members__.item():</span><br><span class="line">	print(name,&apos;=&gt;&apos;,&apos;,&apos;,member.value)</span><br></pre></td></tr></table></figure>
+<p><code>value</code>属性则是自动赋值给成员的<code>int</code>常量，默认从1开始</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from enum import Enum,unique</span><br><span class="line">@nuique</span><br><span class="line">class Weekday(Enum)</span><br></pre></td></tr></table></figure>
+<p><code>@unique</code>装饰器可以保证没有重复值</p>
+</li>
+<li><p>访问枚举类型</p>
+<ul>
+<li>可以用成员名引用枚举常量（<code>Weekday.Tue</code>）</li>
+<li>也可以直接根据value的值获得枚举常量（<code>Weekday(1)</code>）</li>
+</ul>
+</li>
+</ul>
+<h4 id="6、使用元类metaclass"><a href="#6、使用元类metaclass" class="headerlink" title="6、使用元类metaclass"></a>6、使用元类<code>metaclass</code></h4><ul>
+<li><p><code>type()</code></p>
+<ul>
+<li><p>查看一个类型或变量的类型</p>
+<p><code>Hello</code>是一个class，它的类型就是<code>type`</code></p>
+<p><code>h = Hello()</code>，<code>h</code>是一个实例，它的类型就是class<code>Hello</code></p>
+</li>
+<li><p>动态创建新的类型</p>
+<p><code>Hello = type(&#39;Hello&#39;,(object,),dict(hello=fn))</code> #创建Hello class</p>
+<p>要创建一个class对象，<code>type()</code>函数依次传入3个参数：</p>
+<ul>
+<li>1、class的名称                       #<code>Hello</code></li>
+<li>2、继承的父类==集合==，继承多重继承，==注意tuple的单元素写法 3==     #<code>(object,)</code></li>
+<li>3、class的方法与函数绑定         #<code>decit(hello=fn)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code>metaclass</code>：控制类的创建行为</p>
+<ul>
+<li><p>1、先定义<code>metaclass</code></p>
+<p><code>class ListMetaclass(type):</code></p>
+<p>metaclass的类名以Metaclass结尾</p>
+<p>==metaclass是类的模板，所以必须从type类型派生==</p>
+</li>
+<li><p>2、再创建<code>class</code></p>
+<p><code>class MyList(list,metaclass=ListMetaclass:</code></p>
+<p>==定义类时，需要传入关键字metaclass==</p>
+</li>
+<li><p>3、最后创建实例</p>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>客官打赏一波呗</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpy.jpg" alt="拾柒 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="拾柒 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+
+	
+	  <div>
+		<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+	  </div>
+	
+	
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"><i class="fa fa-tag"></i> python</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/21/Python笔记/python笔记2(函数)/" rel="next" title="python函数部分">
+                <i class="fa fa-chevron-left"></i> python函数部分
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="拾柒">
+            
+              <p class="site-author-name" itemprop="name">拾柒</p>
+              <p class="site-description motion-element" itemprop="description">外面纷纷扰扰，里面乱乱糟糟</p>
+          </div>
+		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1309838051&auto=0&height=66"></iframe>
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+			
+           
+		   
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/oouapatia" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/wang15877" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-crosshairs"></i>CSDN</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、面向对象编程"><span class="nav-number">1.</span> <span class="nav-text">一、面向对象编程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、类和实例"><span class="nav-number">1.1.</span> <span class="nav-text">1、类和实例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、访问限制"><span class="nav-number">1.2.</span> <span class="nav-text">2、访问限制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、继承和多态"><span class="nav-number">1.3.</span> <span class="nav-text">3、继承和多态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、获取对象信息"><span class="nav-number">1.4.</span> <span class="nav-text">4、获取对象信息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、实例属性和类属性"><span class="nav-number">2.</span> <span class="nav-text">二、实例属性和类属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、面向对象高级编程"><span class="nav-number">3.</span> <span class="nav-text">三、面向对象高级编程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、使用-slots-方法"><span class="nav-number">3.1.</span> <span class="nav-text">1、使用__slots__方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、使用-property"><span class="nav-number">3.2.</span> <span class="nav-text">2、使用@property</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、多重继承"><span class="nav-number">3.3.</span> <span class="nav-text">3、多重继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、定制类"><span class="nav-number">3.4.</span> <span class="nav-text">4、定制类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、使用枚举类Enum"><span class="nav-number">3.5.</span> <span class="nav-text">5、使用枚举类Enum()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、使用元类metaclass"><span class="nav-number">3.6.</span> <span class="nav-text">6、使用元类metaclass</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">拾柒</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'v2ivfWz6QH1pYuKa8KVF13cU-gzGzoHsz',
+        appKey: 'HfzMUIrd4bVUCSvnA1KxYrAo',
+        placeholder: 'come on',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("v2ivfWz6QH1pYuKa8KVF13cU-gzGzoHsz", "HfzMUIrd4bVUCSvnA1KxYrAo");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: ,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
