@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="python,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="拾柒" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="[TOC] Python�ʼ�123456789�����͵����ԣ�������Դ�뷢����ȥ�����ٵĴ����������ٶ���C�����ʺϿ�����Щ׷�������ٶȡ���ַ���Ӳ�����ܵĳ������������߱��������Ǹ���ѷ����﷨�ĳ������ת��ΪCPU�ܹ���ִ�еĻ����룬Ȼ��ִ�С������������Ͳ�ȷ�������Ա�">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python��������">
+<meta property="og:url" content="http://yoursite.com/2019/04/21/Python笔记/python笔记1(基础)/index.html">
+<meta property="og:site_name" content="拾柒">
+<meta property="og:description" content="[TOC] Python�ʼ�123456789�����͵����ԣ�������Դ�뷢����ȥ�����ٵĴ����������ٶ���C�����ʺϿ�����Щ׷�������ٶȡ���ַ���Ӳ�����ܵĳ������������߱��������Ǹ���ѷ����﷨�ĳ������ת��ΪCPU�ܹ���ִ�еĻ����룬Ȼ��ִ�С������������Ͳ�ȷ�������Ա�">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-21T09:35:13.216Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python��������">
+<meta name="twitter:description" content="[TOC] Python�ʼ�123456789�����͵����ԣ�������Դ�뷢����ȥ�����ٵĴ����������ٶ���C�����ʺϿ�����Щ׷�������ٶȡ���ַ���Ӳ�����ܵĳ������������߱��������Ǹ���ѷ����﷨�ĳ������ת��ΪCPU�ܹ���ִ�еĻ����룬Ȼ��ִ�С������������Ͳ�ȷ�������Ա�">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/04/21/Python笔记/python笔记1(基础)/">
+
+
+
+
+
+  <title>python�������� | 拾柒</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">拾柒</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">好好学习，天天向上</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/21/Python笔记/python笔记1(基础)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="拾柒">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="拾柒">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">python��������</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-21T17:31:12+08:00">
+                2019-04-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/21/Python笔记/python笔记1(基础)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/21/Python笔记/python笔记1(基础)/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/04/21/Python笔记/python笔记1(基础)/" class="leancloud_visitors" data-flag-title="python��������">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>[TOC]</p>
+<h3 id="Python�ʼ�"><a href="#Python�ʼ�" class="headerlink" title="Python�ʼ�"></a>Python�ʼ�</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">�����͵����ԣ�������Դ�뷢����ȥ</span><br><span class="line"></span><br><span class="line">�����ٵĴ����������ٶ���</span><br><span class="line"></span><br><span class="line">C�����ʺϿ�����Щ׷�������ٶȡ���ַ���Ӳ�����ܵĳ���</span><br><span class="line"></span><br><span class="line">���������߱��������Ǹ���ѷ����﷨�ĳ������ת��ΪCPU�ܹ���ִ�еĻ����룬Ȼ��ִ�С�</span><br><span class="line"></span><br><span class="line">�����������Ͳ�ȷ�������Ա�����`��̬����`����̬�����ڶ������ʱ�����ƶ���������</span><br></pre></td></tr></table></figure>
+<h3 id="һ������"><a href="#һ������" class="headerlink" title="һ������"></a>һ������</h3><p>Python֮��Guido van Rossum������������</p>
+<p>�����ٵĴ����������ٶ���</p>
+<p>C�����ʺϿ�����Щ׷�������ٶȡ���ַ���Ӳ�����ܵĳ��򣬶�Python��������дӦ�ó���ĸ߼�������ԡ�</p>
+<p>Python��Ϊ�����ṩ�˷ǳ����ƵĻ�������⣬���������硢�ļ���GUI�����ݿ⡢�ı��ȴ������ݣ�������س��������õ��”;�������õĿ��⣬Python���д����ĵ�������</p>
+<ul>
+<li>Ӧ�ã�</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">��ѡ������Ӧ�ã�������վ����̨����ȵȣ�</span><br><span class="line"></span><br><span class="line">����������ճ���Ҫ��С���ߣ�����ϵͳ����Ա��Ҫ�Ľű�����ȵȣ�</span><br><span class="line"></span><br><span class="line">������ǰ��������Կ����ĳ����ٰ�װ����������ʹ�á�</span><br></pre></td></tr></table></figure>
+<ul>
+<li>ȱ�㣺</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">��һ��ȱ����������ٶ�����Python�ǽ��������ԣ�������ִ��ʱ��һ��һ�еط����CPU������Ļ����롣</span><br><span class="line">�ڶ���ȱ����Ǵ��벻�ܼ��ܡ������͵����ԣ�������Դ�뷢����ȥ��</span><br></pre></td></tr></table></figure>
+<p>�˳�python����ģʽ��<code>exit()</code>����<code>ctrl+z</code></p>
+<p>Python����ģʽ�Ĵ���������һ�У�ִ��һ�У���������ģʽ��ֱ������<code>.py</code>�ļ���һ����ִ�и��ļ��ڵ����д���</p>
+<h3 id="�����򵥵��������ͺͱ���"><a href="#�����򵥵��������ͺͱ���" class="headerlink" title="�����򵥵��������ͺͱ���"></a>�����򵥵��������ͺͱ���</h3><h4 id="1-�����﷨"><a href="#1-�����﷨" class="headerlink" title="1. �����﷨"></a>1. �����﷨</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1.��Python���ϸ����ִ�Сд</span><br><span class="line">2.Python�е�ÿһ�о���һ����䣬ÿ������Ի��н���</span><br><span class="line">3.Python��ÿһ����䲻Ҫ�������淶�н���ÿ�в�Ҫ����80���ַ���</span><br><span class="line">4.һ�������Էֶ��б�д�����б�дʱ�������\��β  </span><br><span class="line">5.Python�������ϸ�����ԣ�������Python�в�Ҫ���д����  </span><br><span class="line">6.��Python��ʹ��#����ʾע�ͣ�#������ݶ�����ע�ͣ�ע�͵����ݽ��ᱻ������������</span><br><span class="line">    ���ǿ���ͨ��ע�����Գ�����н���˵����һ��Ҫ�������õı�дע�͵�ϰ��</span><br><span class="line">    ע��Ҫ������ˣ�һ��ϰ����#��߻����һ���ո�</span><br></pre></td></tr></table></figure>
+<h4 id="2-��������"><a href="#2-��������" class="headerlink" title="2. ��������"></a>2. ��������</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Unicode���������Զ�ͳһ��һ�ױ�����</span><br><span class="line"></span><br><span class="line">ASCII����һ���ֽڣ�Unicode����ͨ���������ֽ�</span><br><span class="line"></span><br><span class="line">��Unicode����ת��Ϊ���ɱ䳤���롱��UTF-8���룬����Ӣ����ĸ��һ���ֽڣ�����ͨ����3���ֽڣ�ֻ�к���Ƨ���ַ��Żᱻ�����4-6���ֽڡ�</span><br><span class="line"></span><br><span class="line">ASCII������Կ���UTF-8�����һ����</span><br><span class="line"></span><br><span class="line">������ڴ��У�ͳһʹ��Unicode���룬����Ҫ���浽Ӳ�̻��ߴ����ʱ�򣬾�ת��ΪUTF-8����</span><br></pre></td></tr></table></figure>
+<p>==ASCII��ķ�Χ�ǣ�0-255��-128-+127==</p>
+<p>��Ӣ�ĵ�<code>str</code>������<code>ASCII</code>����Ϊ<code>bytes</code>�������ĵ�<code>str</code>������<code>UTF-8</code>����Ϊ<code>bytes</code></p>
+<p>==���ĵı��볬����ASCII�ı��뷶Χ�������Ǿ�ϻ�==</p>
+<h4 id="3-��������"><a href="#3-��������" class="headerlink" title="3.��������"></a>3.��������</h4><ol>
+<li><p>��ʶ���п��Ժ�����ĸ�����֡�_�����ǲ���ʹ�����ֿ�ͷ</p>
+</li>
+<li><p>��ʶ��������Python�еĹؼ��ֺͱ����֣���ʹ��Python�еĺ�������Ϊ��ʶ��</p>
+</li>
+<li><p>�����淶��</p>
+</li>
+</ol>
+<ul>
+<li><p>��Python��ע����ѭ���������淶��</p>
+<ul>
+<li><p>�»���������</p>
+<p>������ĸСд������֮��ʹ��_�ָ�</p>
+</li>
+<li><p>��˹�������������շ���������  </p>
+<p>����ĸ��д��ÿ�����ʿ�ͷ��ĸ��д��������ĸСд</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="4-ע��"><a href="#4-ע��" class="headerlink" title="4. ע��"></a>4. ע��</h4><ol>
+<li>��<code>#</code>�ſ�ͷ��ע�͵�һ�д���</li>
+<li>��<code>&quot;&quot;&quot;</code>����<code>&#39;&#39;&#39;</code>�������ţ�ע�͵����д���</li>
+<li>����ע��<code>#coding = utf-8</code></li>
+</ol>
+<p>python���ִ�Сд��ʹ����������֯����飨4��������</p>
+<p>==Python�Ļ����������ͣ����֡��ַ������б����ֵ䡢Ԫ��==</p>
+<h4 id="5-���������ͺͱ���"><a href="#5-���������ͺͱ���" class="headerlink" title="5. ���������ͺͱ���"></a>5. ���������ͺͱ���</h4><h5 id="1����ֵ��"><a href="#1����ֵ��" class="headerlink" title="1����ֵ��"></a>1����ֵ��</h5><ol>
+<li><p>����</p>
+<p>Python������û�д�С����</p>
+<p>������ֵĳ��ȹ��󣬿���ʹ���»�����Ϊ�ָ���</p>
+</li>
+<li><p>����������e��ʾ10,�磺1.23e9��</p>
+<p>Python�����е�С������float���ͣ�û�д�С���ƣ�������һ����Χ��ֱ�ӱ�ʾΪ<code>inf</code>�����޴�</p>
+</li>
+<li><p>����</p>
+</li>
+</ol>
+<h5 id="2���ַ���-��Python-3�У�����Unicode�����"><a href="#2���ַ���-��Python-3�У�����Unicode�����" class="headerlink" title="2���ַ���(��Python 3�У�����Unicode�����)"></a>2���ַ���(��Python 3�У�����Unicode�����)</h5><ul>
+<li><p>�Ե����Ż���˫����������������</p>
+</li>
+<li><p><code>ord()</code>��������ȡ�ַ���������ʾ</p>
+</li>
+<li><p><code>chr()</code>�������ѱ���ת���ɶ�Ӧ���ַ�</p>
+</li>
+<li><p>ת���ַ�\��python�ڲ�����ʹ��<code>r&#39;&#39;</code>��ʾ<code>&#39;&#39;</code>�ڵ��ַ���Ĭ�ϲ�ת��</p>
+</li>
+<li>������<code>&#39;&#39;&#39;...&#39;&#39;&#39;</code>�ĸ�ʽ��ʾ��������</li>
+<li><p>�����ʽ���ַ���</p>
+<ul>
+<li><p>��c������ͬ����%����</p>
+<p>����<code>print(&#39;Hi,%s have %d&#39; %(&#39;you&#39;,1000))</code></p>
+<p>%s���������������ת��Ϊ�ַ���</p>
+<p><code>%%</code>��ʾһ��%</p>
+</li>
+<li><p><code>format()</code>����</p>
+<p>�����ô���Ĳ��������滻�ַ����ڵ�ռλ��<code>{0}</code>��<code>{1}</code>����==��Ҫ��0��ʼ==</p>
+<p>����<code>print(&#39;{0} and {1}&#39;.format(12,21))</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="3������ֵ��ture��false��"><a href="#3������ֵ��ture��false��" class="headerlink" title="3������ֵ��ture��false��"></a>3������ֵ��<code>ture</code>��<code>false</code>��</h5><p>����ֵ������<code>and</code> �������㣩<code>or</code>�������㣩 <code>not</code>�������㣩 ����    </p>
+<h5 id="4����ֵ"><a href="#4����ֵ" class="headerlink" title="4����ֵ"></a>4����ֵ</h5><p>��ֵ��None��ʾ</p>
+<h5 id="5������"><a href="#5������" class="headerlink" title="5������"></a>5������</h5><p>���������������֡�Ӣ�ĺ��»�<code>_</code>�ߵ���ϣ����������ֿ�ͷ</p>
+<h5 id="6������"><a href="#6������" class="headerlink" title="6������"></a>6������</h5><p>ͨ���ô�д�ı�������ʾ������ʵ�����Ǳ�����</p>
+<h5 id="7��bytes"><a href="#7��bytes" class="headerlink" title="7��bytes"></a>7��bytes</h5><p>�����Ҫ�������ϴ��䣬���߱��浽�����ϣ�����Ҫ��<code>str</code>ת��Ϊ���ֽ�Ϊ��λ��<code>bytes</code>��</p>
+<p>�����ϻ�����϶�ȡ��������������������<code>bytes</code>��</p>
+<p>==bytes��ÿ���ַ���ֻռһ���ֽڡ�==</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">��ʾ��b&apos;&apos;</span><br><span class="line">��:x = b&apos;abc&apos;</span><br></pre></td></tr></table></figure>
+<p><strong>(1) ��<code>str</code>ת��Ϊ<code>bytes</code></strong></p>
+<p>��Unicode��ʾ��<code>str</code>ͨ��<code>encode()</code>���Ա���Ϊָ����<code>bytes</code></p>
+<p>����<code>&#39;abc&#39;.encode(&#39;ascii&#39;)</code></p>
+<p><strong>(2) ��<code>bytes</code>ת��Ϊ<code>str</code></strong></p>
+<p>ͨ��<code>decode()</code>����</p>
+<p>����<code>b&#39;abc&#39;.decode(&#39;ascii&#39;)</code></p>
+<p>��<code>bytes</code>�а����޷�������ֽڣ�<code>decode()</code>�ᱨ������<code>bytes</code>��ֻ��һС������Ч�����Դ���    <code>errors=&#39;ignore&#39;</code>���Դ�����ֽ�</p>
+<p><strong>�����ַ����ĳ���</strong></p>
+<p><code>len()</code>������==<code>str</code>��������ֽ�����<code>bytes</code>��������ֽ���==</p>
+<p>����<code>len(&#39;abc&#39;)</code> <code>len(b&#39;abc&#39;)</code></p>
+<p>==�ڱ���Դ����ʱ������ΪUTF-8����==</p>
+<p>ȡԴ����ʱ��Ϊ��������UTF-8�����ȡ��ͨ�����ļ���ͷ����</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env python3  //����Linux/OS Xϵͳ������һ��Python��ִ�г���</span><br><span class="line">#-*- coding: utf-8 -*-	//����python������������UTF-8�����ȡԴ����</span><br><span class="line">����ʱҲ�豣��ΪUTF-8����</span><br></pre></td></tr></table></figure>
+<h3 id="��������"><a href="#��������" class="headerlink" title="��������"></a>��������</h3><p><strong>list��tuple�����õ����򼯺ϣ�</strong></p>
+<h4 id="1-�б���list"><a href="#1-�б���list" class="headerlink" title="1. �б���list:[]"></a>1. �б���list:<code>[]</code></h4><p><strong>�����б�����������ṹ��Ľ�ϣ�</strong></p>
+<p>���õ�һ���������ͣ�list��һ������ļ��ϣ�������ʱ���Ӻ�ɾ�����е�Ԫ��</p>
+<p>�б�������������Ϳ��Բ�ͬ��Ҳ���Ժ����б������ɶ�ά���飩</p>
+<p><strong>������</strong></p>
+<ul>
+<li><p>����</p>
+<p><code>a.append(elem)</code>�ӵ�ĩβ</p>
+<p><code>a.insert(site,elem)</code>���ӵ�ָ��λ��</p>
+</li>
+<li><p>ɾ��</p>
+<p><code>a.pop(site)</code>����λ�ã�Ĭ��ĩβ</p>
+</li>
+<li><p>�ģ�</p>
+<p>��ֵ����Ӧ����λ��</p>
+</li>
+<li><p>�飺</p>
+<p>������������ͬ�Ǵ�0��ʼ</p>
+<p><code>a[site]</code>,�鿴site��Ԫ�أ�==site����Ϊ-1������ѯ���һ��Ԫ��==</p>
+</li>
+</ul>
+<h4 id="2-Ԫ��-tuple"><a href="#2-Ԫ��-tuple" class="headerlink" title="2. Ԫ��: tuple:()"></a>2. Ԫ��: tuple:<code>()</code></h4><p><strong>�������б���</strong></p>
+<p>==tupleһ����ʼ���Ͳ��ܸ���==����ѯ��<code>list</code>��ͬ</p>
+<ul>
+<li><p>ֻ��һ��Ԫ�ص�tuple</p>
+<p>==����ʱ�����һ������<code>,</code>==����������<code>a = (1,)</code></p>
+<p>��<code>a = (1)</code>�������<code>1</code>�����</p>
+</li>
+<li><p>���ɱ�ġ�tuple��ʵ����list�ڱ䣩��</p>
+<p>tuple�а���list��a = tuple(‘a’,’b’,[‘A’,’B’])<code>tuple��������Ԫ�أ�</code>a��b��list</p>
+</li>
+</ul>
+<h3 id="�g��ֵ�-dic"><a href="#�g��ֵ�-dic" class="headerlink" title="�ġ��ֵ� dic:{}"></a>�ġ��ֵ� dic:<code>{}</code></h3><h4 id="1-�ص�"><a href="#1-�ص�" class="headerlink" title="1. �ص�"></a>1. �ص�</h4><ol>
+<li>�ֵ���һ�ֿɱ�����������Դ洢�������͵�����</li>
+<li>�ֵ���ÿ�����ݶ����á�������key���������������������п������±��������</li>
+<li>�ֵ������û���Ⱥ�˳���ϵ���ֵ�Ĵ洢��==����==��</li>
+<li>�ֵ��е������Լ���key��-ֵ��value���ӽ���ӳ��洢,�����ٶȿ�</li>
+<li>�ֵ�ļ������ظ�����ֻ����==���ɱ�����==��Ϊ�ֵ�ļ���</li>
+</ol>
+<p>��ʾ������<code>��{}����������ð�ţ������ָ��-ֵ�ԣ�����ֵ���÷ֺŷָ���</code></p>
+<p>����<code>d = {&#39;Michael&#39;: 95, &#39;Bob&#39;: 75, &#39;Tracy&#39;: 85}</code></p>
+<h4 id="2-����"><a href="#2-����" class="headerlink" title="2. ����"></a>2. ����</h4><p><strong>��1���������ֵ䣺  </strong></p>
+<ul>
+<li><code>d = {}</code></li>
+</ul>
+<p><strong>��2�������ǿ��ֵ䣺</strong></p>
+<ul>
+<li><code>d = {&#39;name&#39;:&#39;tarena&#39;,&#39;age&#39;:&#39;15&#39;}</code></li>
+</ul>
+<p><strong>��3���ֵ�Ĺ��캯�� dict��</strong></p>
+<ul>
+<li>dict����  ����һ�����ֵ䣬��ͬ��{}</li>
+<li>dict��iterable��  �ÿɵ��������ʼ��һ���ֵ�</li>
+<li>dict��**kwargs��  �ؼ��ִ�����ʽ����һ���ֵ�</li>
+</ul>
+<h4 id="3-��"><a href="#3-��" class="headerlink" title="3. ��"></a>3. ��</h4><p>�������ݷ���dict�ķ�����</p>
+<ul>
+<li><p>��1�����˳�ʼ��ʱָ����</p>
+</li>
+<li><p>��2��ͨ��key����</p>
+<p><code>d[&#39;Adam&#39;] = 67</code></p>
+</li>
+</ul>
+<p>һ��keyֻ�ܶ�Ӧһ��value</p>
+<h4 id="4-ɾ"><a href="#4-ɾ" class="headerlink" title="4. ɾ"></a>4. ɾ</h4><p><strong>ɾ��һ��key��</strong></p>
+<ul>
+<li>��<code>pop(key)</code>��������Ӧ��valueҲ���dict��ɾ��</li>
+</ul>
+<h4 id="5-Ҫ����key�����ڵJ���"><a href="#5-Ҫ����key�����ڵJ���" class="headerlink" title="5. Ҫ����key�����ڵĴ���:"></a>5. Ҫ����key�����ڵĴ���:</h4><ul>
+<li><p>(1)ͨ��<code>in/not in</code>�ж�key�Ƿ���ڣ�</p>
+<p><code>&#39;Thomas&#39; in d</code>     #������ڷ���True�����򷵻�False��not in ��in����ֵ�෴</p>
+</li>
+<li><p>(2)ͨ��dict�ṩ��<code>get()</code>���������key�����ڣ����Է���<code>None</code>�������Լ�ָ����value��</p>
+<p><code>d.get(&#39;Thomas&#39;, -1)</code></p>
+</li>
+</ul>
+<p>==dict��key������<strong>���ɱ����</strong>==</p>
+<p>ͨ��key����λ�õ��㷨��Ϊ��ϣ�㷨��Hash��</p>
+<h3 id="�塢����set"><a href="#�塢����set" class="headerlink" title="�塢����set"></a>�塢����set</h3><h4 id="1-�ص�-1"><a href="#1-�ص�-1" class="headerlink" title="1. �ص�"></a>1. �ص�</h4><ol>
+<li>�����ǿɱ������</li>
+<li>�����ڵ����ݶ�����Ψһ�ģ���û���ظ���key��==�ظ�Ԫ����set���Զ�������==</li>
+<li>����������Ĵ洢�ṹ�������е�����û���Ⱥ��ϵ</li>
+<li>set��ԭ����dictһ���������ڵ�Ԫ�ر�����==���ɱ����==</li>
+<li>�����ǿɵ�����</li>
+<li>�������൱��ֻ�м�û��ֵ���ֵ䣨��һ��key�ļ��ϣ������洢value��</li>
+</ol>
+<p>==���ڲ��������˵�����ö������������ⷽ����Ҳ����ı�ö���������������Щ�����ᴴ���µĶ��󲢷���==</p>
+<h4 id="2-����-1"><a href="#2-����-1" class="headerlink" title="2. ����"></a>2. ����</h4><p>Ҫ����һ��set����Ҫ�ṩһ��list��Ϊ���뼯��</p>
+<p>  <strong>��1�������յļ��ϣ�</strong><br>      <code>set����   #set��������һ���յļ���</code></p>
+<p><strong>��2�������ǿռ��ϣ�</strong><br>      <code>s = {1,2,3}  #�����е���������1,2,3</code><br><strong>��3�����ϵĹ��캯�� set��</strong></p>
+<ul>
+<li>set���������ռ���</li>
+<li>set��iterable��  �ÿɵ������󴴽�һ���µļ��϶���  </li>
+</ul>
+<h4 id="3-��-1"><a href="#3-��-1" class="headerlink" title="3. ��"></a>3. ��</h4><ul>
+<li>ͨ��<code>add(key)</code>����</li>
+<li><code>s.add(4)</code></li>
+</ul>
+<h4 id="4-ɾ-1"><a href="#4-ɾ-1" class="headerlink" title="4. ɾ"></a>4. ɾ</h4><ul>
+<li><p>ͨ��<code>remove(key)</code>����</p>
+</li>
+<li><p><code>s.remove(4)</code></p>
+</li>
+</ul>
+<h4 id="5-��ѧ�����ϵL����������Y���"><a href="#5-��ѧ�����ϵL����������Y���" class="headerlink" title="5. ��ѧ�����ϵĽ����������Ȳ���"></a>5. ��ѧ�����ϵĽ����������Ȳ���</h4><ul>
+<li>������<code>s1 &amp; s2</code></li>
+<li>������<code>s1 | s2</code></li>
+</ul>
+<h3 id="�塢�ж�"><a href="#�塢�ж�" class="headerlink" title="�塢�ж�"></a>�塢�ж�</h3><h4 id="if���"><a href="#if���" class="headerlink" title="if���"></a>if���</h4><ul>
+<li><p>python��ifû�����ţ�==��������==</p>
+</li>
+<li><p><code>if</code>��<code>else</code>����ð��<code>:</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if age &gt;= 18:</span><br><span class="line"></span><br><span class="line">else��</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>elif</code>����else if��</p>
+</li>
+</ul>
+<h3 id="����ѭ��"><a href="#����ѭ��" class="headerlink" title="����ѭ��"></a>����ѭ��</h3><ol>
+<li>for…inѭ��</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for x in ...:  #��ÿ��Ԫ�ش������x��Ȼ��ִ���������</span><br><span class="line">	print(x)</span><br></pre></td></tr></table></figure>
+<p><code>[x * x for x in range(1, 11)]</code></p>
+<p>forѭ���������if�жϣ�<code>[x * x for x in range(1, 11) if x % 2 == 0]</code></p>
+<p>����ѭ����<code>[m + n for m in &#39;ABC&#39; for n in &#39;XYZ&#39;]</code></p>
+<p><code>for</code>ѭ����ʵ����ͬʱʹ�����������������������<code>dict</code>��<code>items()</code>����ͬʱ����key��value</p>
+<p><code>for k, v in d.items():
+     print(k, &#39;=&#39;, v)</code></p>
+<h4 id="2-whileѭ��"><a href="#2-whileѭ��" class="headerlink" title="2. whileѭ��"></a>2. whileѭ��</h4><p>��C����ͬ</p>
+<h4 id="3-�˳�ѭ��"><a href="#3-�˳�ѭ��" class="headerlink" title="3. �˳�ѭ��"></a>3. �˳�ѭ��</h4><ul>
+<li>break���˳�ѭ��</li>
+<li>continue���˳���ǰѭ��</li>
+</ul>
+<h3 id="�ߡ�����"><a href="#�ߡ�����" class="headerlink" title="�ߡ�����"></a>�ߡ�����</h3><h4 id="1-����"><a href="#1-����" class="headerlink" title="1. ����"></a>1. ����</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">10/3	#��������Ǹ�����</span><br><span class="line">10//3	#�������������</span><br><span class="line">10%3	#ȡ�����㣬���������</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>客官打赏一波呗</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpy.jpg" alt="拾柒 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="拾柒 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+
+	
+	  <div>
+		<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+	  </div>
+	
+	
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"><i class="fa fa-tag"></i> python</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/18/Self-criticism/" rel="next" title="Self-criticism">
+                <i class="fa fa-chevron-left"></i> Self-criticism
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/21/Python笔记/python笔记2(函数)/" rel="prev" title="python函数部分">
+                python函数部分 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="拾柒">
+            
+              <p class="site-author-name" itemprop="name">拾柒</p>
+              <p class="site-description motion-element" itemprop="description">外面纷纷扰扰，里面乱乱糟糟</p>
+          </div>
+		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1309838051&auto=0&height=66"></iframe>
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+			
+           
+		   
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/oouapatia" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/wang15877" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-crosshairs"></i>CSDN</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python�ʼ�"><span class="nav-number">1.</span> <span class="nav-text">Python�ʼ�</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#һ������"><span class="nav-number">2.</span> <span class="nav-text">һ������</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#�����򵥵��������ͺͱ���"><span class="nav-number">3.</span> <span class="nav-text">�����򵥵��������ͺͱ���</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-�����﷨"><span class="nav-number">3.1.</span> <span class="nav-text">1. �����﷨</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-��������"><span class="nav-number">3.2.</span> <span class="nav-text">2. ��������</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-��������"><span class="nav-number">3.3.</span> <span class="nav-text">3.��������</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-ע��"><span class="nav-number">3.4.</span> <span class="nav-text">4. ע��</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-���������ͺͱ���"><span class="nav-number">3.5.</span> <span class="nav-text">5. ���������ͺͱ���</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1����ֵ��"><span class="nav-number">3.5.1.</span> <span class="nav-text">1����ֵ��</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2���ַ���-��Python-3�У�����Unicode�����"><span class="nav-number">3.5.2.</span> <span class="nav-text">2���ַ���(��Python 3�У�����Unicode�����)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3������ֵ��ture��false��"><span class="nav-number">3.5.3.</span> <span class="nav-text">3������ֵ��ture��false��</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4����ֵ"><span class="nav-number">3.5.4.</span> <span class="nav-text">4����ֵ</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5������"><span class="nav-number">3.5.5.</span> <span class="nav-text">5������</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6������"><span class="nav-number">3.5.6.</span> <span class="nav-text">6������</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7��bytes"><span class="nav-number">3.5.7.</span> <span class="nav-text">7��bytes</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#��������"><span class="nav-number">4.</span> <span class="nav-text">��������</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-�б���list"><span class="nav-number">4.1.</span> <span class="nav-text">1. �б���list:[]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Ԫ��-tuple"><span class="nav-number">4.2.</span> <span class="nav-text">2. Ԫ��: tuple:()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#�g��ֵ�-dic"><span class="nav-number">5.</span> <span class="nav-text">�ġ��ֵ� dic:{}</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-�ص�"><span class="nav-number">5.1.</span> <span class="nav-text">1. �ص�</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-����"><span class="nav-number">5.2.</span> <span class="nav-text">2. ����</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-��"><span class="nav-number">5.3.</span> <span class="nav-text">3. ��</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-ɾ"><span class="nav-number">5.4.</span> <span class="nav-text">4. ɾ</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-Ҫ����key�����ڵJ���"><span class="nav-number">5.5.</span> <span class="nav-text">5. Ҫ����key�����ڵĴ���:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#�塢����set"><span class="nav-number">6.</span> <span class="nav-text">�塢����set</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-�ص�-1"><span class="nav-number">6.1.</span> <span class="nav-text">1. �ص�</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-����-1"><span class="nav-number">6.2.</span> <span class="nav-text">2. ����</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-��-1"><span class="nav-number">6.3.</span> <span class="nav-text">3. ��</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-ɾ-1"><span class="nav-number">6.4.</span> <span class="nav-text">4. ɾ</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-��ѧ�����ϵL����������Y���"><span class="nav-number">6.5.</span> <span class="nav-text">5. ��ѧ�����ϵĽ����������Ȳ���</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#�塢�ж�"><span class="nav-number">7.</span> <span class="nav-text">�塢�ж�</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#if���"><span class="nav-number">7.1.</span> <span class="nav-text">if���</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#����ѭ��"><span class="nav-number">8.</span> <span class="nav-text">����ѭ��</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-whileѭ��"><span class="nav-number">8.1.</span> <span class="nav-text">2. whileѭ��</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-�˳�ѭ��"><span class="nav-number">8.2.</span> <span class="nav-text">3. �˳�ѭ��</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#�ߡ�����"><span class="nav-number">9.</span> <span class="nav-text">�ߡ�����</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-����"><span class="nav-number">9.1.</span> <span class="nav-text">1. ����</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">拾柒</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'v2ivfWz6QH1pYuKa8KVF13cU-gzGzoHsz',
+        appKey: 'HfzMUIrd4bVUCSvnA1KxYrAo',
+        placeholder: 'come on',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("v2ivfWz6QH1pYuKa8KVF13cU-gzGzoHsz", "HfzMUIrd4bVUCSvnA1KxYrAo");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: ,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
