@@ -2,16 +2,23 @@
 <urlset xmlns="https://oouapatia.github.io/">
   
   <url>
-    <loc>http://yoursite.com/categories/index.html</loc>
+    <loc>http://yoursite.com/2019/04/14/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     
-    <lastmod>2019-10-20T08:20:06.614Z</lastmod>
+    <lastmod>2019-10-20T08:28:20.022Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/index.html</loc>
     
-    <lastmod>2019-10-20T08:19:43.281Z</lastmod>
+    <lastmod>2019-10-20T08:27:17.501Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/index.html</loc>
+    
+    <lastmod>2019-10-20T08:26:50.987Z</lastmod>
     
   </url>
   
@@ -54,13 +61,6 @@
     <loc>http://yoursite.com/2019/04/14/MarkDown%E7%AC%94%E8%AE%B0/</loc>
     
     <lastmod>2019-04-14T12:33:20.132Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2019/04/14/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    
-    <lastmod>2019-04-14T12:32:48.909Z</lastmod>
     
   </url>
   
