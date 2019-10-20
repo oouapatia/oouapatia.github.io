@@ -30,13 +30,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2019/10/20/python%E7%AC%94%E8%AE%B02(%E5%87%BD%E6%95%B0)/</loc>
-    
-    <lastmod>2019-04-21T07:02:32.757Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/categories/Python/python%E7%AC%94%E8%AE%B02(%E5%87%BD%E6%95%B0).html</loc>
     
     <lastmod>2019-04-21T07:02:32.757Z</lastmod>
@@ -44,14 +37,21 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2019/04/13/%E7%BB%93%E5%90%88Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</loc>
+    <loc>http://yoursite.com/2019/10/20/python%E7%AC%94%E8%AE%B02(%E5%87%BD%E6%95%B0)/</loc>
+    
+    <lastmod>2019-04-21T07:02:32.757Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/Hexo/%E7%BB%93%E5%90%88Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2.html</loc>
     
     <lastmod>2019-04-14T13:07:46.047Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/Hexo/%E7%BB%93%E5%90%88Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2.html</loc>
+    <loc>http://yoursite.com/2019/04/13/%E7%BB%93%E5%90%88Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</loc>
     
     <lastmod>2019-04-14T13:07:46.047Z</lastmod>
     
@@ -72,14 +72,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/MarkDown/MarkDown%E7%AC%94%E8%AE%B0.html</loc>
+    <loc>http://yoursite.com/2019/04/14/MarkDown%E7%AC%94%E8%AE%B0/</loc>
     
     <lastmod>2019-04-14T12:33:20.132Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2019/04/14/MarkDown%E7%AC%94%E8%AE%B0/</loc>
+    <loc>http://yoursite.com/categories/MarkDown/MarkDown%E7%AC%94%E8%AE%B0.html</loc>
     
     <lastmod>2019-04-14T12:33:20.132Z</lastmod>
     
