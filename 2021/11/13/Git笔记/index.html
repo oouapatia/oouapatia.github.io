@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Git,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="拾柒" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="Git学习笔记[TOC] 一、git常用命令1、初始化分支（git init） 在初始化分支后，需要提交内容后才能创建分支，否则会出现fatal: 不是一个有效的对象名：&amp;#39;master&amp;#39;错误  2、添加远程仓库（git remote） 添加远程库 git remote add origin git@github.com:xxx/xxx.git  使用token git remote">
+<meta name="keywords" content="Git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git学习笔记">
+<meta property="og:url" content="http://yoursite.com/2021/11/13/Git笔记/index.html">
+<meta property="og:site_name" content="拾柒">
+<meta property="og:description" content="Git学习笔记[TOC] 一、git常用命令1、初始化分支（git init） 在初始化分支后，需要提交内容后才能创建分支，否则会出现fatal: 不是一个有效的对象名：&amp;#39;master&amp;#39;错误  2、添加远程仓库（git remote） 添加远程库 git remote add origin git@github.com:xxx/xxx.git  使用token git remote">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-11-13T05:59:09.510Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git学习笔记">
+<meta name="twitter:description" content="Git学习笔记[TOC] 一、git常用命令1、初始化分支（git init） 在初始化分支后，需要提交内容后才能创建分支，否则会出现fatal: 不是一个有效的对象名：&amp;#39;master&amp;#39;错误  2、添加远程仓库（git remote） 添加远程库 git remote add origin git@github.com:xxx/xxx.git  使用token git remote">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2021/11/13/Git笔记/">
+
+
+
+
+
+  <title>Git学习笔记 | 拾柒</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">拾柒</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">好好学习，天天向上</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/11/13/Git笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="拾柒">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="拾柒">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Git学习笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-11-13T13:58:00+08:00">
+                2021-11-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2021/11/13/Git笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2021/11/13/Git笔记/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2021/11/13/Git笔记/" class="leancloud_visitors" data-flag-title="Git学习笔记">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Git学习笔记"><a href="#Git学习笔记" class="headerlink" title="Git学习笔记"></a><center>Git学习笔记</center></h2><p>[TOC]</p>
+<h3 id="一、git常用命令"><a href="#一、git常用命令" class="headerlink" title="一、git常用命令"></a>一、git常用命令</h3><h4 id="1、初始化分支（git-init）"><a href="#1、初始化分支（git-init）" class="headerlink" title="1、初始化分支（git init）"></a>1、初始化分支（<code>git init</code>）</h4><ul>
+<li>在初始化分支后，需要提交内容后才能创建分支，否则会出现<code>fatal: 不是一个有效的对象名：&#39;master&#39;</code>错误</li>
+</ul>
+<h4 id="2、添加远程仓库（git-remote）"><a href="#2、添加远程仓库（git-remote）" class="headerlink" title="2、添加远程仓库（git remote）"></a>2、添加远程仓库（<code>git remote</code>）</h4><ul>
+<li><p><strong>添加远程库</strong></p>
+<p><code>git remote add origin git@github.com:xxx/xxx.git</code></p>
+<ul>
+<li><p>使用<code>token</code></p>
+<p><code>git remote add origin https://&lt;token&gt;@github.com/xxx/xxx.git</code></p>
+</li>
+</ul>
+<p><code>origin</code>为取的名字</p>
+</li>
+<li><p><strong>清除远程库</strong></p>
+<p><code>git remote rm origin</code></p>
+</li>
+</ul>
+<h4 id="3、克隆远程库（git-clone）"><a href="#3、克隆远程库（git-clone）" class="headerlink" title="3、克隆远程库（git clone）"></a>3、克隆远程库（<code>git clone</code>）</h4><ul>
+<li><code>git clone git@github.com:xxx/xxx.git</code></li>
+<li><code>git clone https://github.com:xxx/xxx.git</code></li>
+</ul>
+<h4 id="4、查看log（git-log）"><a href="#4、查看log（git-log）" class="headerlink" title="4、查看log（git log）"></a>4、查看log（<code>git log</code>）</h4><ul>
+<li><code>git log</code>：查看commit id<ul>
+<li><code>git log --graph</code>：图形化显示分支</li>
+</ul>
+</li>
+<li><code>git reflog</code>：查看所有提交过的commit id，包括删除过的</li>
+</ul>
+<h4 id="5、分支操作（git-branch）"><a href="#5、分支操作（git-branch）" class="headerlink" title="5、分支操作（git branch）"></a>5、分支操作（<code>git branch</code>）</h4><p> 提交代码前最好创建本地分支</p>
+<ul>
+<li><p><strong>新建分支</strong></p>
+<p><code>git checkout -b &lt;name&gt;</code>（相当于以下两条命令）</p>
+<ul>
+<li><code>git branch dev</code>创建分支<br><code>git checkout dev</code>切换分支</li>
+</ul>
+</li>
+<li><p><strong>重命名分支</strong></p>
+<p><code>git branch -m &lt;oldName&gt; &lt;newName&gt;</code></p>
+</li>
+<li><p><strong>查看分支</strong></p>
+<p><code>git branch -l</code></p>
+<p><code>git branch</code> 查看本地分支（<code>git branch -r</code> 查看远程分支，<code>git branch -a</code>查看所有分支）</p>
+</li>
+<li><p><strong>切换分支</strong></p>
+<p><code>git checkout &lt;name&gt;</code></p>
+</li>
+<li><p><strong>合并分支</strong></p>
+<ul>
+<li><p><code>git merge &lt;name&gt;</code></p>
+<blockquote>
+<p>直接把两个分支再各自拉出一条线，然后连在一起</p>
+<p>最后会有两次提交，有分叉，会产生<code>Merge branch xxx of xxx</code>提交</p>
+</blockquote>
+</li>
+<li><p><code>git rebase</code></p>
+<blockquote>
+<p>将当前分支与要合并的分支中不同的commits取消掉，临时保存起来，然后在要合并的分支中再把保存起来的commits patch上去，变成新的commits</p>
+<p>最后就只剩合并后的分支，是一条直线，没有分叉，不会有<code>Merge branch xxx of xxx</code>提交</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>删除分支</strong></p>
+<p><code>git branch -d &lt;name&gt;</code></p>
+</li>
+<li><p><strong>建立本地分支和远程分支的关联</strong></p>
+<p><code>git branch --set-upstream-to=origin/&lt;远程分支&gt; &lt;本地分支&gt;</code></p>
+</li>
+</ul>
+<h4 id="6、拉取代码（fetch-amp-pull）"><a href="#6、拉取代码（fetch-amp-pull）" class="headerlink" title="6、拉取代码（fetch&amp;pull）"></a>6、拉取代码（<code>fetch&amp;pull</code>）</h4><ul>
+<li><p><code>git fetch</code>：将远程commit拉取到本地</p>
+<p><code>git fetch origin &lt;分支名&gt;</code>：若不指定分支名，默认为<code>master</code>分支</p>
+<blockquote>
+<p><code>fetch</code>不会直接将拉取的commit接到本地分支的最后，而是在本地最后一次==push的commit处==再拉取一个新的分支</p>
+</blockquote>
+</li>
+<li><p><code>git pull</code>：拉取并合并分支</p>
+<blockquote>
+<p>用于从远程获取代码并合并本地的版本</p>
+</blockquote>
+<p><code>git pull</code>其实就是 <code>git fetch</code> 和 <code>git merge FETCH_HEAD</code>的简写</p>
+</li>
+<li><p><code>git pull origin &lt;远程分支名&gt;:&lt;本地分支名&gt;</code></p>
+<ul>
+<li>拉取origin的远程分支与本地分支合并</li>
+</ul>
+</li>
+<li><p>==本地未修改==，只有master分支，直接更新</p>
+<ul>
+<li><code>git pull</code><ul>
+<li>若修改后直接pull，会产生冲突</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>本地分支有修改，多分支</p>
+<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git checkout &lt;主分支&gt;</span><br><span class="line">git pull</span><br><span class="line">git checkout &lt;子分支&gt;</span><br><span class="line">git merger &lt;主分支&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="7、添加暂存库（git-add）"><a href="#7、添加暂存库（git-add）" class="headerlink" title="7、添加暂存库（git add）"></a>7、添加暂存库（<code>git add</code>）</h4><ul>
+<li><p><code>git add</code>：把修改的文件提交到暂存区</p>
+</li>
+<li><p><code>git add -A</code>：提交所有变化</p>
+</li>
+<li><p><code>git add -u</code> ：提交被修改和被删除文件，不包括新文件</p>
+</li>
+<li><p><code>git add .</code> ：提交新文件和被修改文件，不包括被删除文件</p>
+</li>
+<li><p><code>git add -p</code>：<a href="https://www.cnblogs.com/zqb-all/p/13020293.html" target="_blank" rel="noopener">使用 git add -p 整理 patch</a></p>
+<blockquote>
+<p><code>-p</code>, <code>--patch</code> 交互地在索引和工作树之间选择补丁块并将它们添加到索引中。这让用户有机会在将修改后的内容添加到索引之前查看差异。</p>
+<p>这可以有效地运行 add –interactive，但是会绕过初始命令菜单，而直接跳转到 patch 子命令。有关详细信息，请参见`‘交互模式’’。</p>
+</blockquote>
+<p>能够交互式选择代码片段，选择需要<code>add</code>的代码片段</p>
+<ul>
+<li><p>输入<code>git add -p</code>进入<code>patch mode</code>，此时<code>git</code>会自动将改动切分成多个片段，并展示第一个片段，提示进行选择；提示语句：<code>Stage this hunk [y, n, q, a, d, /, s, e, ?]</code></p>
+<p>| 字符 | 含义                             |<br>| —- | ——————————– |<br>| <code>y</code>  | 暂存此块                         |<br>| <code>n</code>  | 不暂存此块                       |<br>| <code>q</code>  | 退出，不暂存此块与剩余区块       |<br>| <code>a</code>  | 暂存此块与文件后面的所有的区块   |<br>| <code>d</code>  | 不暂存此块与此文件后面所有的区块 |<br>| <code>g</code>  | 选择并跳转至一个区块             |<br>| <code>/</code>  | 搜索与给定正则表达式匹配的区块   |<br>| <code>j</code>  | 暂不决定，转至下一个未决定的区块 |<br>| <code>J</code>  | 暂不决定，转至下一个区块         |<br>| <code>k</code>  | 暂不决定，转至上一个未决定的区块 |<br>| <code>K</code>  | 暂不决定，转至上一个区块         |<br>| <code>s</code>  | 将当前区块划分成多个较小的区块   |<br>| <code>e</code>  | 手动编辑当前的区块               |<br>| <code>？</code> | 显示帮助                         |</p>
+</li>
+<li><p>挑选完后，使用<code>git diff --cached</code>确认，或者在提交之后<code>git show</code>确认改动</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="8、提交到本地仓库（git-commit）"><a href="#8、提交到本地仓库（git-commit）" class="headerlink" title="8、提交到本地仓库（git commit）"></a>8、提交到本地仓库（<code>git commit</code>）</h4><ul>
+<li><p><code>git commit -m &quot;message&quot;</code></p>
+<ul>
+<li>使用<code>-m</code> 参数，可以直接在引号中输入备注</li>
+<li>不使用<code>-m</code>参数，会打开vim，在vim中编辑备注</li>
+</ul>
+</li>
+<li><p><code>git commit -a -m &quot;message&quot;</code></p>
+<ul>
+<li><code>-a</code>参数：把还没有执行add命令的修改一起提交</li>
+</ul>
+</li>
+<li><p><code>git commit --amend</code></p>
+<ul>
+<li><p>将多次提交合并为一次，追加此次提交到上一次提交的<code>commit id</code>中，而不会增加新的<code>commit id</code></p>
+</li>
+<li><p>==如果在已提交到远程仓库的commit上追加<code>amend</code>，会造成远程分支与本地分支不一致，需要重新拉取合并分支后再push==</p>
+<p><strong><code>--amend</code>一般应用于没有push到远程分支的<code>commit</code>上</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="9、提交到远程仓库（git-push）"><a href="#9、提交到远程仓库（git-push）" class="headerlink" title="9、提交到远程仓库（git push）"></a>9、提交到远程仓库（<code>git push</code>）</h4><p>提交到远程分支</p>
+<blockquote>
+<p>origin 为添加远程仓库时所取名字</p>
+</blockquote>
+<ul>
+<li><p><strong>提交到远程分支</strong></p>
+<ul>
+<li><p><code>git push origin &lt;branch name&gt;</code>：提交指定分支</p>
+</li>
+<li><p><code>git push -u origin &lt;branch name&gt;</code>：将分支提交到<code>origin</code>，同时指定<code>origin</code>为默认主机</p>
+<p><code>-u</code>：指定默认主机，后面提交时可以直接使用<code>git push</code>，不带<code>origin</code>与分支名</p>
+</li>
+</ul>
+</li>
+<li><p><strong>提交到<code>Gerrit</code>中</strong></p>
+<p><code>git push origin HEAD:refs/for/&lt;分支名&gt;</code></p>
+</li>
+<li><p><strong>提交到<code>Gerrit</code>中</strong></p>
+<p><code>git push origin HEAD:refs/for/&lt;branch name&gt;</code></p>
+<ul>
+<li><code>origin</code> : 代表远程仓库</li>
+<li><code>HEAD</code>：本地当前分支</li>
+<li><code>&lt;分支名&gt;</code>: 需要push到远程的分支名</li>
+<li><code>refs/for</code>：代表需要经过<code>gerrit</code>上进行<code>review</code>，而不是直接提交到仓库中</li>
+</ul>
+</li>
+<li><p><strong>强制提交</strong>，覆盖远程仓库代码</p>
+<ul>
+<li><code>git push --force origin &lt;分支名&gt;</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="10、回退版本（git-reset）"><a href="#10、回退版本（git-reset）" class="headerlink" title="10、回退版本（git reset）"></a>10、回退版本（<code>git reset</code>）</h4><ul>
+<li><p><strong>取消在暂存区中的某个文件</strong></p>
+<p><code>git reset HEAD &lt;filename&gt;</code></p>
+</li>
+<li><p><strong>取消暂存当前路径下所有的文件</strong></p>
+<p><code>git reset HEAD .</code></p>
+</li>
+<li><p><strong>取消最近的n次提交或退至指定<code>commit id</code></strong></p>
+<p><code>git reset HEAD~n</code> 或 <code>git reset &lt;commit id&gt;</code></p>
+<ul>
+<li>同步指定的commit id的内容到当前，==不包含提交==。（即回退到commit id版本，但修改<strong>不会被<code>commit</code></strong>到本地仓库）</li>
+</ul>
+<p><code>git reset --hard HEAD~n</code> 或 <code>git reset &lt;commit id&gt;</code></p>
+<ul>
+<li>同步指定的commit id的内容到当前，==包含提交==。（即回退到commit id版本，但修改<strong>会被<code>commit</code></strong>到本地仓库）</li>
+</ul>
+</li>
+</ul>
+<h4 id="11、移除（git-clean）"><a href="#11、移除（git-clean）" class="headerlink" title="11、移除（git clean）"></a>11、移除（<code>git clean</code>）</h4><ul>
+<li><p><code>git clean -f &lt;filename&gt;</code>：移除工作区的某个文件</p>
+</li>
+<li><p><code>git clean -df</code>：移除工作区所有未追踪文件</p>
+</li>
+</ul>
+<h4 id="12、撤销（git-checkout）"><a href="#12、撤销（git-checkout）" class="headerlink" title="12、撤销（git checkout）"></a>12、撤销（<code>git checkout</code>）</h4><ul>
+<li><p><strong>撤销工作区（还未添加至暂存区）某个文件的修改</strong></p>
+<p><code>git checkout &lt;filename&gt;</code></p>
+<p><code>git checkout .</code></p>
+</li>
+<li><p><strong>撤销添加到暂存区的文件</strong></p>
+<p>使用<code>git reset HEAD &lt;filename&gt;</code>命令</p>
+</li>
+<li><p><strong>撤销添加至本地仓库的文件</strong></p>
+<p>进行版本回退<code>git reset HEAD~1</code>或<code>git reset &lt;commit id&gt;</code></p>
+</li>
+</ul>
+<h4 id="13、删除（git-rm）"><a href="#13、删除（git-rm）" class="headerlink" title="13、删除（git rm）"></a>13、删除（<code>git rm</code>）</h4><ul>
+<li><p>将文件从<strong>暂存区和工作区</strong>删除</p>
+<p><code>git rm &lt;filename&gt;</code></p>
+</li>
+<li><p>强行从暂存区和工作区中删除修改后的文件</p>
+<p><code>git rm -f &lt;filename&gt;</code></p>
+</li>
+<li><p>将文件<strong>从暂存区删除</strong>，但<strong>保留在工作区</strong>中（仅从跟踪清单中删除）</p>
+<p><code>git rm --cached &lt;filename&gt;</code></p>
+</li>
+<li><p><strong>递归删除</strong></p>
+<p><code>git rm -r &lt;directory&gt;</code></p>
+</li>
+</ul>
+<h4 id="14、查看文件差异（git-diff）"><a href="#14、查看文件差异（git-diff）" class="headerlink" title="14、查看文件差异（git diff）"></a>14、查看文件差异（<code>git diff</code>）</h4><ul>
+<li><p><strong>查看修改后与原文件的不同</strong></p>
+<p><code>git diff</code></p>
+</li>
+<li><p><strong>查看已经暂存起来的文件和上次提交的文件的差异</strong></p>
+<p><code>git diff --cached</code></p>
+<p><code>git diff --staged</code></p>
+<ul>
+<li>显示的是下一次commit时会提交到HEAD的内容(不带-a情况下)</li>
+</ul>
+</li>
+<li><p>查看简单的<code>diff</code>结果，可以加上<code>--stat</code>参数</p>
+<p><code>git diff --stat</code></p>
+</li>
+<li><p><strong>图像化查看不同</strong></p>
+<p><code>git difftool</code></p>
+<ul>
+<li><code>difftool</code>需要配置</li>
+</ul>
+</li>
+<li><p><strong>本地分支与远程分支比较</strong></p>
+<ul>
+<li><p>显示远程分支与本地分支差异</p>
+<p><code>git diff &lt;remote-branch&gt; &lt;local-branch&gt;</code></p>
+</li>
+<li><p>仅显示远程分支与本地分支文件名差异</p>
+<p><code>git diff --name-status &lt;remote-name&gt; &lt;local-name&gt;</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="15、变基操作（git-rebase）"><a href="#15、变基操作（git-rebase）" class="headerlink" title="15、变基操作（git rebase）"></a>15、变基操作（<code>git rebase</code>）</h4><table>
+<thead>
+<tr>
+<th><code>rebase</code>指令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>p, pick</code></td>
+<td>使用提交</td>
+</tr>
+<tr>
+<td><code>r, reword</code></td>
+<td>使用提交，但修改提交说明</td>
+</tr>
+<tr>
+<td><code>e, edit</code></td>
+<td>使用提交，但停止以便进行提交修补</td>
+</tr>
+<tr>
+<td><code>s, squash</code></td>
+<td>使用提交，但和前一个版本融合</td>
+</tr>
+<tr>
+<td><code>f, fixup</code></td>
+<td>类似于 “squash”，但丢弃提交说明日志</td>
+</tr>
+<tr>
+<td><code>x, exec</code></td>
+<td>使用 shell 运行命令（此行剩余部分）</td>
+</tr>
+<tr>
+<td><code>d, drop</code></td>
+<td>删除提交</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://www.jianshu.com/p/4a8f4af4e803" target="_blank" rel="noopener">【Git】rebase 用法小结</a></p>
+<p>==<strong>不要通过<code>rebase</code>对任何已经提交到公共仓库中的commit进行修改</strong>==</p>
+<blockquote>
+<p>可以对某一段线性提交历史进行编辑、删除、复制、粘贴</p>
+</blockquote>
+<ul>
+<li><p><strong>合并多个commit为一个完整commit</strong></p>
+<ol>
+<li><p><code>git rebase -i  [startpoint]  [endpoint]</code></p>
+<ul>
+<li><p><code>-i</code>：<code>--interactive</code>，弹出交互式的界面让用户编辑完成合并操作</p>
+</li>
+<li><p><code>[startpoint]</code> <code>[endpoint]</code>：指定了一个编辑区间</p>
+<p>若不指定<code>[endpoint]</code>，则该区间默认终点为当前分支<code>HEAD</code>所指的<code>commit</code></p>
+</li>
+</ul>
+</li>
+<li><p>将<code>pick</code>改为<code>s</code>（<code>squash</code>）</p>
+</li>
+</ol>
+</li>
+<li><p><strong>将某一段commit粘贴到另一个分支上</strong></p>
+<ol>
+<li><p><code>git rebase   [startpoint]   [endpoint]  --onto  [branchName]</code></p>
+<p><strong>注：</strong><code>[startpoint]   [endpoint]</code>：指定的是一个<strong>前开后闭</strong>的区间，<code>startpoint</code>应当为要包含commit的前一个</p>
+</li>
+<li><p>切换到<code>branchName</code></p>
+</li>
+<li><p>将<code>branchName</code>所指的<code>commit_id</code>设置为当前<code>HEAD</code>所指的<code>commit_id</code>：<code>git reset --hard commit_id</code></p>
+</li>
+</ol>
+</li>
+</ul>
+<h4 id="16、保存工作区内容（git-stash）"><a href="#16、保存工作区内容（git-stash）" class="headerlink" title="16、保存工作区内容（git stash）"></a>16、保存工作区内容（<code>git stash</code>）</h4><ul>
+<li><p><strong>将工作区的修改临时保存在暂存区</strong></p>
+<p><code>git stash</code></p>
+</li>
+<li><p><strong>将暂存区的内容恢复到工作区</strong></p>
+<p><code>git stash pop</code></p>
+<p><code>git stash apply</code></p>
+</li>
+<li><p><strong>查看暂存区有哪些临时修改</strong></p>
+<p><code>git stash list</code></p>
+</li>
+<li><p><strong>丢弃暂存区的修改</strong></p>
+<p><code>git stash drop stash@{$num}</code></p>
+<p><code>git stash clear</code></p>
+</li>
+</ul>
+<h4 id="17、标签（git-tag）"><a href="#17、标签（git-tag）" class="headerlink" title="17、标签（git tag）"></a>17、标签（<code>git tag</code>）</h4><ul>
+<li><p><strong>创建标签</strong></p>
+<p><code>git tag &lt;tag name&gt;</code></p>
+<ul>
+<li>标签默认打在最新的<code>commit</code>（<code>HEAD</code>）上</li>
+</ul>
+</li>
+<li><p><strong>指定要创建的标签的位置</strong></p>
+<p><code>git tag &lt;tag name&gt; &lt;commit id&gt;</code></p>
+</li>
+<li><p><strong>新建带有标签的tag</strong></p>
+<p><code>git tag -a &lt;tag name&gt; -m &quot;&quot;</code></p>
+</li>
+<li><p><strong>获取tag列表</strong></p>
+<p><code>git tag -l</code></p>
+</li>
+<li><p><strong>查看具体tag</strong></p>
+<p><code>git show &lt;tag name&gt;</code></p>
+</li>
+<li><p><strong>删除tag</strong></p>
+<p><code>git tag -d &lt;tag name&gt;</code></p>
+</li>
+</ul>
+<h4 id="18、patch（git-format-patch-amp-git-am）"><a href="#18、patch（git-format-patch-amp-git-am）" class="headerlink" title="18、patch（git format-patch&amp;git am）"></a>18、<code>patch</code>（<code>git format-patch</code>&amp;<code>git am</code>）</h4><p><a href="https://blog.csdn.net/liuhaomatou/article/details/54410361" target="_blank" rel="noopener">如何使用git 生成patch 和打入patch</a></p>
+<ul>
+<li><strong>生成patch</strong><ul>
+<li><code>git format-patch &lt;commit_id&gt;</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="二、git操作"><a href="#二、git操作" class="headerlink" title="二、git操作"></a>二、git操作</h3><h4 id="1、提交当前工作区内容至指定的Commit-id"><a href="#1、提交当前工作区内容至指定的Commit-id" class="headerlink" title="1、提交当前工作区内容至指定的Commit-id"></a>1、提交当前工作区内容至指定的Commit-id</h4><blockquote>
+<p>在<code>typora</code>中需要重新打开才能看见提交的内容</p>
+</blockquote>
+<ol>
+<li><p>保存当前工作区内容</p>
+<p><code>git stash</code></p>
+</li>
+<li><p>修改commit内容，将HEAD指针指向需要更改的commit上</p>
+<p><code>git rebase -i commit_id^</code></p>
+<p><code>-i</code>：<code>--interactive</code>，弹出交互式的界面让用户编辑完成合并操作    </p>
+<p>找到需要更改的<code>commit</code>，将行首的<code>pick</code>改为<code>edit</code></p>
+</li>
+<li><p>取出<code>stash</code>中的工作</p>
+<p><code>git stash pop</code></p>
+</li>
+<li><p>添加至暂存库</p>
+<p><code>git add &lt;filename&gt;</code></p>
+</li>
+<li><p>追加到指定的<code>commit</code>中</p>
+<p><code>git commit --amed</code></p>
+</li>
+<li><p>移动HEAD指针到最新的<code>commit</code>处</p>
+<p><code>git rebase --continue</code></p>
+<p>若有冲突：</p>
+<ul>
+<li>解决冲突后add，再追加</li>
+<li>再用<code>git rebase --continue</code>将HEAD指针移动至最新的commit处</li>
+</ul>
+</li>
+</ol>
+<h4 id="2、git在命令行中正确显示中文文件名"><a href="#2、git在命令行中正确显示中文文件名" class="headerlink" title="2、git在命令行中正确显示中文文件名"></a>2、git在命令行中正确显示中文文件名</h4><p>在命令行输入<code>git config --global core.quotepath off</code></p>
+<blockquote>
+<p>将<code>core.quotepath</code>设为false，不会对<code>0x80</code>以上的字符进行quote</p>
+</blockquote>
+<h4 id="3、github怎么邀请合作者加入到自己的项目"><a href="#3、github怎么邀请合作者加入到自己的项目" class="headerlink" title="3、github怎么邀请合作者加入到自己的项目"></a>3、<code>github</code>怎么邀请合作者加入到自己的项目</h4><p><a href="https://jingyan.baidu.com/article/948f5924f43f47d80ff5f9f9.html" target="_blank" rel="noopener"><code>github</code>怎么邀请合作者加入到自己的项目</a></p>
+<blockquote>
+<p>登录<code>github</code>-&gt;选择项目-&gt;setting-&gt;Manage access-&gt;通过邮件、用户名等添加用户</p>
+<p>被邀请人在<code>github</code>账号头像处查看邀请信息</p>
+</blockquote>
+<h4 id="4、github添加token"><a href="#4、github添加token" class="headerlink" title="4、github添加token"></a>4、<code>github</code>添加token</h4><p><a href="https://www.pianshen.com/article/9592754254/" target="_blank" rel="noopener">关于<code>github</code>中的token的创建方法</a></p>
+<blockquote>
+<p><code>github</code>用户setting -&gt;Developer settings–&gt;Personal access tokens–&gt;Generate token</p>
+</blockquote>
+<h4 id="3、本地有修改提交到远程，但不确定是否与远程有冲突"><a href="#3、本地有修改提交到远程，但不确定是否与远程有冲突" class="headerlink" title="3、本地有修改提交到远程，但不确定是否与远程有冲突"></a>3、本地有修改提交到远程，但不确定是否与远程有冲突</h4><blockquote>
+<p><code>git push</code>有冲突提交，不产生合并记录提交</p>
+</blockquote>
+<ol>
+<li><p>本地添加提交（<code>add commit</code>）</p>
+</li>
+<li><p><code>git fetch origin</code></p>
+</li>
+<li><p><code>git rebase origin/&lt;branch-name&gt;</code></p>
+</li>
+<li><p>若有冲突：</p>
+<ul>
+<li>解决冲突后<code>git add</code></li>
+<li><code></code>git rebase –continue`</li>
+</ul>
+</li>
+<li><p><code>git push</code></p>
+</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>客官打赏一波呗</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpy.jpg" alt="拾柒 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="拾柒 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+
+	
+	  <div>
+		<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+	  </div>
+	
+	
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Git/" rel="tag"><i class="fa fa-tag"></i> Git</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/20/python笔记3(面向对象)/" rel="next" title="python面向对象">
+                <i class="fa fa-chevron-left"></i> python面向对象
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="拾柒">
+            
+              <p class="site-author-name" itemprop="name">拾柒</p>
+              <p class="site-description motion-element" itemprop="description">外面纷纷扰扰，里面乱乱糟糟</p>
+          </div>
+		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1309838051&auto=0&height=66"></iframe>
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+			
+           
+		   
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/oouapatia" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/wang15877" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-crosshairs"></i>CSDN</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Git学习笔记"><span class="nav-number">1.</span> <span class="nav-text">Git学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、git常用命令"><span class="nav-number">1.1.</span> <span class="nav-text">一、git常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、初始化分支（git-init）"><span class="nav-number">1.1.1.</span> <span class="nav-text">1、初始化分支（git init）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、添加远程仓库（git-remote）"><span class="nav-number">1.1.2.</span> <span class="nav-text">2、添加远程仓库（git remote）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、克隆远程库（git-clone）"><span class="nav-number">1.1.3.</span> <span class="nav-text">3、克隆远程库（git clone）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、查看log（git-log）"><span class="nav-number">1.1.4.</span> <span class="nav-text">4、查看log（git log）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、分支操作（git-branch）"><span class="nav-number">1.1.5.</span> <span class="nav-text">5、分支操作（git branch）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、拉取代码（fetch-amp-pull）"><span class="nav-number">1.1.6.</span> <span class="nav-text">6、拉取代码（fetch&amp;pull）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7、添加暂存库（git-add）"><span class="nav-number">1.1.7.</span> <span class="nav-text">7、添加暂存库（git add）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8、提交到本地仓库（git-commit）"><span class="nav-number">1.1.8.</span> <span class="nav-text">8、提交到本地仓库（git commit）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9、提交到远程仓库（git-push）"><span class="nav-number">1.1.9.</span> <span class="nav-text">9、提交到远程仓库（git push）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10、回退版本（git-reset）"><span class="nav-number">1.1.10.</span> <span class="nav-text">10、回退版本（git reset）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11、移除（git-clean）"><span class="nav-number">1.1.11.</span> <span class="nav-text">11、移除（git clean）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12、撤销（git-checkout）"><span class="nav-number">1.1.12.</span> <span class="nav-text">12、撤销（git checkout）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13、删除（git-rm）"><span class="nav-number">1.1.13.</span> <span class="nav-text">13、删除（git rm）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14、查看文件差异（git-diff）"><span class="nav-number">1.1.14.</span> <span class="nav-text">14、查看文件差异（git diff）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#15、变基操作（git-rebase）"><span class="nav-number">1.1.15.</span> <span class="nav-text">15、变基操作（git rebase）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#16、保存工作区内容（git-stash）"><span class="nav-number">1.1.16.</span> <span class="nav-text">16、保存工作区内容（git stash）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#17、标签（git-tag）"><span class="nav-number">1.1.17.</span> <span class="nav-text">17、标签（git tag）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#18、patch（git-format-patch-amp-git-am）"><span class="nav-number">1.1.18.</span> <span class="nav-text">18、patch（git format-patch&amp;git am）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、git操作"><span class="nav-number">1.2.</span> <span class="nav-text">二、git操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、提交当前工作区内容至指定的Commit-id"><span class="nav-number">1.2.1.</span> <span class="nav-text">1、提交当前工作区内容至指定的Commit-id</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、git在命令行中正确显示中文文件名"><span class="nav-number">1.2.2.</span> <span class="nav-text">2、git在命令行中正确显示中文文件名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、github怎么邀请合作者加入到自己的项目"><span class="nav-number">1.2.3.</span> <span class="nav-text">3、github怎么邀请合作者加入到自己的项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、github添加token"><span class="nav-number">1.2.4.</span> <span class="nav-text">4、github添加token</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、本地有修改提交到远程，但不确定是否与远程有冲突"><span class="nav-number">1.2.5.</span> <span class="nav-text">3、本地有修改提交到远程，但不确定是否与远程有冲突</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">拾柒</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'v2ivfWz6QH1pYuKa8KVF13cU-gzGzoHsz',
+        appKey: 'HfzMUIrd4bVUCSvnA1KxYrAo',
+        placeholder: 'come on',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("v2ivfWz6QH1pYuKa8KVF13cU-gzGzoHsz", "HfzMUIrd4bVUCSvnA1KxYrAo");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: ,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
